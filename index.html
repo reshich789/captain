@@ -1,0 +1,2431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Togdheere General Trading & Logistics Co. — World-class logistics, procurement, infrastructure, and supply chain solutions across the Horn of Africa."/>
+<meta name="keywords" content="logistics, Somalia, Horn of Africa, procurement, infrastructure, construction, warehousing, freight, UNICEF, IOM"/>
+<title>Togdheere General Trading & Logistics Co. | Horn of Africa's Premier Enterprise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+/* ═══════════════════════════════════════════
+   CSS VARIABLES & RESET
+═══════════════════════════════════════════ */
+:root {
+  --blue-900: #0a1628;
+  --blue-800: #0d1f3c;
+  --blue-700: #102a52;
+  --blue-600: #1a3a6b;
+  --blue-500: #1e4d8c;
+  --blue-400: #2563b8;
+  --blue-300: #3b82f6;
+  --blue-200: #93c5fd;
+  --blue-100: #dbeafe;
+  --red-600: #c0122c;
+  --red-500: #dc1a34;
+  --red-400: #ef4444;
+  --red-glow: rgba(220,26,52,0.4);
+  --mint-500: #10b981;
+  --mint-400: #34d399;
+  --mint-300: #6ee7b7;
+  --gold: #d4a843;
+  --gold-light: #f0c96a;
+  --black: #050a14;
+  --dark: #0c1420;
+  --dark-2: #111827;
+  --gray-900: #1f2937;
+  --gray-800: #374151;
+  --gray-700: #4b5563;
+  --gray-600: #6b7280;
+  --gray-400: #9ca3af;
+  --gray-200: #e5e7eb;
+  --gray-100: #f3f4f6;
+  --white: #ffffff;
+  --glass: rgba(255,255,255,0.04);
+  --glass-border: rgba(255,255,255,0.08);
+  --glass-hover: rgba(255,255,255,0.08);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.5);
+  --shadow-blue: 0 8px 32px rgba(30,77,140,0.4);
+  --shadow-red: 0 8px 32px rgba(192,18,44,0.3);
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 40px;
+  --transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+  --transition-slow: all 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--black);
+  color:var(--white);
+  overflow-x:hidden;
+  line-height:1.7;
+}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+ul{list-style:none;}
+button{cursor:pointer;border:none;background:none;font-family:inherit;}
+input,textarea,select{font-family:inherit;}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-track{background:var(--dark);}
+::-webkit-scrollbar-thumb{background:var(--blue-500);border-radius:3px;}
+
+/* SELECTION */
+::selection{background:var(--blue-400);color:#fff;}
+
+/* ═══════════════════════════════════════════
+   UTILITIES
+═══════════════════════════════════════════ */
+.container{max-width:1280px;margin:0 auto;padding:0 24px;}
+.container-wide{max-width:1440px;margin:0 auto;padding:0 40px;}
+.section-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(30,77,140,0.2);border:1px solid rgba(59,130,246,0.3);
+  color:var(--blue-300);font-family:'Montserrat',sans-serif;
+  font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  padding:6px 16px;border-radius:50px;margin-bottom:20px;
+}
+.section-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--blue-300);animation:pulse-dot 2s infinite;}
+.section-title{
+  font-family:'Montserrat',sans-serif;font-weight:800;
+  font-size:clamp(2rem,4vw,3rem);line-height:1.15;
+  letter-spacing:-.02em;margin-bottom:20px;
+}
+.section-subtitle{
+  font-size:1.05rem;color:var(--gray-400);max-width:620px;line-height:1.8;
+}
+.text-gradient{
+  background:linear-gradient(135deg,var(--blue-300),var(--mint-400));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.text-red{color:var(--red-500);}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-left{opacity:0;transform:translateX(-50px);transition:opacity .7s ease,transform .7s ease;}
+.reveal-left.visible{opacity:1;transform:translateX(0);}
+.reveal-right{opacity:0;transform:translateX(50px);transition:opacity .7s ease,transform .7s ease;}
+.reveal-right.visible{opacity:1;transform:translateX(0);}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(1.4);}}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-18px);}}
+@keyframes float2{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-12px) rotate(3deg);}}
+@keyframes shimmer{0%{background-position:-200% center;}100%{background-position:200% center;}}
+@keyframes gradient-shift{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+@keyframes spin-slow{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+@keyframes count-up{from{opacity:0;}to{opacity:1;}}
+@keyframes ripple{0%{transform:scale(0);opacity:1;}100%{transform:scale(4);opacity:0;}}
+@keyframes border-run{0%{background-position:0% 50%;}100%{background-position:200% 50%;}}
+
+/* ═══════════════════════════════════════════
+   TOP CONTACT BAR
+═══════════════════════════════════════════ */
+#top-bar{
+  background:linear-gradient(90deg,var(--blue-900),var(--dark-2));
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  padding:10px 0;
+  position:relative;z-index:1000;
+}
+#top-bar .container{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;flex-wrap:wrap;
+}
+.top-contacts{
+  display:flex;align-items:center;gap:20px;flex-wrap:wrap;
+}
+.top-contact-item{
+  display:flex;align-items:center;gap:7px;
+  font-size:.78rem;color:var(--gray-400);
+  transition:var(--transition);
+}
+.top-contact-item:hover{color:var(--blue-300);}
+.top-contact-item i{color:var(--blue-400);font-size:.8rem;}
+.top-socials{
+  display:flex;align-items:center;gap:10px;
+}
+.top-social-link{
+  width:28px;height:28px;border-radius:6px;
+  background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.72rem;color:var(--gray-400);
+  transition:var(--transition);
+}
+.top-social-link:hover{background:var(--blue-500);border-color:var(--blue-400);color:#fff;transform:translateY(-2px);}
+
+/* ═══════════════════════════════════════════
+   NAVIGATION
+═══════════════════════════════════════════ */
+#navbar{
+  position:sticky;top:0;z-index:999;
+  background:rgba(10,22,40,0.85);backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  transition:var(--transition);
+}
+#navbar.scrolled{
+  background:rgba(5,10,20,0.97);
+  box-shadow:0 4px 40px rgba(0,0,0,0.5);
+}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 0;gap:20px;
+}
+.nav-logo{
+  display:flex;align-items:center;gap:14px;
+  text-decoration:none;
+}
+.logo-mark{
+  width:46px;height:46px;border-radius:12px;
+  background:linear-gradient(135deg,var(--blue-500),var(--blue-700));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.1rem;
+  color:#fff;border:1px solid rgba(255,255,255,0.15);
+  box-shadow:var(--shadow-blue);position:relative;overflow:hidden;
+}
+.logo-mark::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,0.15),transparent);
+}
+.logo-text{display:flex;flex-direction:column;line-height:1.2;}
+.logo-name{
+  font-family:'Montserrat',sans-serif;font-weight:800;font-size:.95rem;
+  letter-spacing:.01em;color:#fff;
+}
+.logo-sub{font-size:.65rem;color:var(--blue-300);letter-spacing:.08em;text-transform:uppercase;font-weight:500;}
+.nav-links{
+  display:flex;align-items:center;gap:4px;
+}
+.nav-link{
+  padding:8px 14px;border-radius:8px;
+  font-size:.85rem;font-weight:500;color:var(--gray-400);
+  transition:var(--transition);position:relative;
+  font-family:'Poppins',sans-serif;
+}
+.nav-link:hover,.nav-link.active{color:#fff;background:rgba(255,255,255,0.06);}
+.nav-link.active::after{
+  content:'';position:absolute;bottom:4px;left:50%;transform:translateX(-50%);
+  width:16px;height:2px;border-radius:1px;background:var(--blue-400);
+}
+.nav-ctas{display:flex;align-items:center;gap:10px;}
+
+/* NAV SEARCH BOX */
+.nav-search{
+  position:relative;display:flex;align-items:center;
+}
+.nav-search-input{
+  width:0;padding:0;opacity:0;
+  background:rgba(255,255,255,0.06);
+  border:1px solid transparent;
+  border-radius:10px;color:#fff;
+  font-size:.84rem;font-family:'Inter',sans-serif;
+  transition:all .4s cubic-bezier(0.4,0,0.2,1);
+  outline:none;
+}
+.nav-search-input::placeholder{color:var(--gray-600);}
+.nav-search.open .nav-search-input{
+  width:220px;padding:9px 40px 9px 14px;opacity:1;
+  border-color:rgba(59,130,246,0.35);
+  background:rgba(255,255,255,0.07);
+}
+.nav-search-input:focus{border-color:var(--blue-400);background:rgba(30,77,140,0.12);}
+.nav-search-btn{
+  position:absolute;right:0;
+  width:36px;height:36px;border-radius:9px;
+  background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--gray-400);font-size:.85rem;
+  transition:var(--transition);cursor:pointer;flex-shrink:0;
+  z-index:2;
+}
+.nav-search.open .nav-search-btn{background:var(--blue-600);border-color:var(--blue-500);color:#fff;}
+.nav-search-btn:hover{background:var(--blue-500);border-color:var(--blue-400);color:#fff;}
+.search-results-dropdown{
+  position:absolute;top:calc(100% + 10px);right:0;
+  width:340px;
+  background:rgba(12,20,32,0.98);backdrop-filter:blur(24px);
+  border:1px solid rgba(59,130,246,0.2);border-radius:var(--radius-md);
+  box-shadow:0 20px 60px rgba(0,0,0,0.6);
+  display:none;overflow:hidden;z-index:9999;
+}
+.search-results-dropdown.visible{display:block;}
+.search-results-header{
+  padding:12px 16px;border-bottom:1px solid rgba(255,255,255,0.06);
+  font-size:.72rem;font-weight:700;color:var(--gray-600);
+  text-transform:uppercase;letter-spacing:.08em;
+}
+.search-result-item{
+  display:flex;align-items:center;gap:12px;
+  padding:12px 16px;cursor:pointer;
+  transition:var(--transition);border-bottom:1px solid rgba(255,255,255,0.04);
+  text-decoration:none;
+}
+.search-result-item:last-child{border-bottom:none;}
+.search-result-item:hover{background:rgba(30,77,140,0.2);}
+.sr-icon{
+  width:34px;height:34px;border-radius:8px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:.82rem;
+}
+.sr-text{flex:1;}
+.sr-title{font-size:.85rem;font-weight:600;color:#fff;}
+.sr-sub{font-size:.73rem;color:var(--gray-600);margin-top:1px;}
+.sr-tag{font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:50px;
+  text-transform:uppercase;letter-spacing:.05em;flex-shrink:0;}
+.search-no-results{
+  padding:24px;text-align:center;
+  font-size:.88rem;color:var(--gray-600);display:none;
+}
+.search-no-results i{font-size:1.8rem;margin-bottom:8px;display:block;color:var(--gray-700);}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 22px;border-radius:10px;
+  font-family:'Poppins',sans-serif;font-size:.85rem;font-weight:600;
+  transition:var(--transition);position:relative;overflow:hidden;
+}
+.btn-ghost{
+  background:transparent;border:1px solid rgba(255,255,255,0.15);color:var(--gray-300);
+}
+.btn-ghost:hover{border-color:var(--blue-400);color:#fff;background:rgba(30,77,140,0.2);}
+.btn-primary{
+  background:linear-gradient(135deg,var(--blue-500),var(--blue-600));
+  color:#fff;border:1px solid rgba(255,255,255,0.1);
+  box-shadow:0 4px 20px rgba(30,77,140,0.4);
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(30,77,140,0.6);}
+.btn-red{
+  background:linear-gradient(135deg,var(--red-600),var(--red-500));
+  color:#fff;border:1px solid rgba(255,255,255,0.1);
+  box-shadow:0 4px 20px rgba(192,18,44,0.3);
+}
+.btn-red:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(192,18,44,0.5);}
+.btn::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,0.1),transparent);
+  opacity:0;transition:var(--transition);
+}
+.btn:hover::after{opacity:1;}
+.hamburger{
+  display:none;flex-direction:column;gap:5px;
+  padding:6px;cursor:pointer;
+}
+.hamburger span{
+  width:24px;height:2px;background:#fff;border-radius:2px;
+  transition:var(--transition);display:block;
+}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+.mobile-menu{
+  display:none;position:fixed;inset:0;z-index:998;
+  background:rgba(5,10,20,0.98);backdrop-filter:blur(20px);
+  flex-direction:column;align-items:center;justify-content:center;gap:30px;
+  transition:var(--transition);
+}
+.mobile-menu.open{display:flex;}
+.mobile-menu .nav-link{font-size:1.4rem;padding:12px 24px;}
+
+/* ═══════════════════════════════════════════
+   HERO SECTION
+═══════════════════════════════════════════ */
+#hero{
+  min-height:100vh;position:relative;
+  display:flex;align-items:center;overflow:hidden;
+  background:var(--black);
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+}
+.hero-bg img{
+  width:100%;height:100%;object-fit:cover;
+  filter:brightness(0.25) saturate(1.2);
+}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 60% 40%,rgba(30,77,140,0.25),transparent),
+    radial-gradient(ellipse 50% 80% at 20% 80%,rgba(192,18,44,0.12),transparent),
+    linear-gradient(180deg,rgba(5,10,20,0.5) 0%,transparent 40%,rgba(5,10,20,0.8) 100%);
+}
+.hero-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(30,77,140,0.08) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(30,77,140,0.08) 1px,transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(ellipse 100% 100% at 50% 50%,black 30%,transparent 80%);
+}
+.hero-particles{position:absolute;inset:0;overflow:hidden;}
+.particle{
+  position:absolute;border-radius:50%;
+  background:var(--blue-400);opacity:.15;
+  animation:float var(--duration,6s) ease-in-out infinite;
+  animation-delay:var(--delay,0s);
+}
+.hero-content{
+  position:relative;z-index:2;
+  padding:120px 0 80px;
+  max-width:800px;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(30,77,140,0.2);border:1px solid rgba(59,130,246,0.25);
+  padding:8px 20px;border-radius:50px;margin-bottom:32px;
+  font-size:.78rem;font-weight:600;color:var(--blue-300);
+  letter-spacing:.1em;text-transform:uppercase;
+  font-family:'Montserrat',sans-serif;
+  animation:fadeInUp .8s ease .2s both;
+}
+.hero-eyebrow i{color:var(--gold);animation:float2 3s ease-in-out infinite;}
+.hero-h1{
+  font-family:'Montserrat',sans-serif;font-weight:900;
+  font-size:clamp(2.2rem,5.5vw,4.2rem);
+  line-height:1.1;letter-spacing:-.025em;
+  margin-bottom:24px;
+  animation:fadeInUp .8s ease .4s both;
+}
+.hero-h1 .line-accent{
+  background:linear-gradient(90deg,var(--blue-300),var(--mint-400),var(--blue-200));
+  background-size:200% auto;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  animation:shimmer 3s linear infinite;
+}
+.hero-sub{
+  font-size:1.1rem;color:var(--gray-400);max-width:580px;
+  line-height:1.8;margin-bottom:40px;
+  animation:fadeInUp .8s ease .6s both;
+}
+.hero-btns{
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  animation:fadeInUp .8s ease .8s both;
+  margin-bottom:60px;
+}
+.hero-btns .btn{padding:14px 28px;font-size:.95rem;}
+.hero-stats{
+  display:flex;align-items:center;gap:40px;flex-wrap:wrap;
+  animation:fadeInUp .8s ease 1s both;
+}
+.hero-stat{display:flex;flex-direction:column;gap:2px;}
+.hero-stat-num{
+  font-family:'Montserrat',sans-serif;font-weight:800;
+  font-size:2.2rem;color:#fff;letter-spacing:-.02em;
+}
+.hero-stat-num span{color:var(--blue-300);}
+.hero-stat-label{font-size:.75rem;color:var(--gray-500);text-transform:uppercase;letter-spacing:.08em;}
+.hero-stat-divider{width:1px;height:48px;background:rgba(255,255,255,0.1);}
+.hero-right{
+  position:absolute;right:0;top:50%;transform:translateY(-50%);
+  z-index:2;display:flex;flex-direction:column;gap:14px;
+  padding-right:24px;
+  animation:fadeInUp .8s ease 1.2s both;
+}
+.hero-badge{
+  background:var(--glass);backdrop-filter:blur(20px);
+  border:1px solid var(--glass-border);border-radius:var(--radius-md);
+  padding:16px 20px;display:flex;align-items:center;gap:12px;
+  transition:var(--transition);cursor:default;
+}
+.hero-badge:hover{background:var(--glass-hover);transform:translateX(-4px);}
+.hero-badge-icon{
+  width:38px;height:38px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;font-size:.95rem;
+  flex-shrink:0;
+}
+.hero-badge-text{display:flex;flex-direction:column;gap:1px;}
+.hero-badge-title{font-size:.78rem;font-weight:700;color:#fff;font-family:'Poppins',sans-serif;}
+.hero-badge-sub{font-size:.68rem;color:var(--gray-500);}
+.hero-scroll{
+  position:absolute;bottom:40px;left:50%;transform:translateX(-50%);
+  z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;
+  animation:fadeInUp .8s ease 1.4s both;
+}
+.hero-scroll span{font-size:.68rem;color:var(--gray-600);letter-spacing:.1em;text-transform:uppercase;}
+.scroll-line{width:1px;height:50px;background:linear-gradient(var(--blue-400),transparent);animation:float 2s ease-in-out infinite;}
+
+/* ═══════════════════════════════════════════
+   TRUST BAR
+═══════════════════════════════════════════ */
+#trust-bar{
+  background:linear-gradient(90deg,var(--blue-900),rgba(30,77,140,0.15),var(--blue-900));
+  border-top:1px solid rgba(59,130,246,0.15);
+  border-bottom:1px solid rgba(59,130,246,0.15);
+  padding:20px 0;overflow:hidden;
+}
+.trust-track{
+  display:flex;align-items:center;gap:60px;
+  animation:scroll-track 25s linear infinite;
+  white-space:nowrap;width:max-content;
+}
+.trust-item{
+  display:flex;align-items:center;gap:10px;
+  font-size:.82rem;color:var(--gray-500);font-weight:500;
+  font-family:'Montserrat',sans-serif;letter-spacing:.05em;text-transform:uppercase;
+  flex-shrink:0;
+}
+.trust-item i{color:var(--blue-400);font-size:.9rem;}
+.trust-dot{width:4px;height:4px;border-radius:50%;background:var(--blue-600);}
+@keyframes scroll-track{0%{transform:translateX(0);}100%{transform:translateX(-50%)}}
+
+/* ═══════════════════════════════════════════
+   ABOUT SECTION
+═══════════════════════════════════════════ */
+#about{padding:120px 0;background:var(--dark);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.about-visual{position:relative;}
+.about-img-main{
+  border-radius:var(--radius-lg);overflow:hidden;
+  box-shadow:var(--shadow-lg);position:relative;
+}
+.about-img-main img{width:100%;height:480px;object-fit:cover;}
+.about-img-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(30,77,140,0.3),transparent,rgba(192,18,44,0.1));
+  border-radius:var(--radius-lg);
+}
+.about-img-accent{
+  position:absolute;bottom:-28px;right:-28px;
+  width:200px;border-radius:var(--radius-md);overflow:hidden;
+  box-shadow:var(--shadow-lg);border:3px solid var(--dark);
+}
+.about-img-accent img{width:100%;height:140px;object-fit:cover;}
+.about-badge{
+  position:absolute;top:-20px;left:-20px;
+  background:linear-gradient(135deg,var(--blue-500),var(--blue-700));
+  border-radius:var(--radius-md);padding:20px;
+  box-shadow:var(--shadow-blue);
+  display:flex;flex-direction:column;align-items:center;gap:2px;
+}
+.about-badge-num{
+  font-family:'Montserrat',sans-serif;font-weight:900;font-size:2rem;color:#fff;
+}
+.about-badge-label{font-size:.68rem;color:var(--blue-200);font-weight:600;text-transform:uppercase;letter-spacing:.06em;}
+.about-text .section-tag{margin-bottom:14px;}
+.about-text p{color:var(--gray-400);line-height:1.9;margin-bottom:18px;font-size:.97rem;}
+.about-features{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:28px 0;}
+.about-feature{
+  display:flex;align-items:center;gap:10px;
+  background:var(--glass);border:1px solid var(--glass-border);
+  border-radius:var(--radius-sm);padding:12px 16px;
+  font-size:.85rem;font-weight:500;color:var(--gray-300);
+  transition:var(--transition);
+}
+.about-feature:hover{background:var(--glass-hover);border-color:rgba(59,130,246,0.2);}
+.about-feature i{color:var(--mint-400);font-size:.85rem;}
+.about-timeline{margin-top:40px;}
+.timeline-title{font-size:.85rem;font-weight:700;color:var(--gray-400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px;}
+.timeline-items{display:flex;flex-direction:column;gap:0;}
+.timeline-item{
+  display:flex;align-items:flex-start;gap:16px;
+  padding-bottom:24px;position:relative;
+}
+.timeline-item::before{
+  content:'';position:absolute;left:11px;top:24px;bottom:0;
+  width:2px;background:linear-gradient(var(--blue-600),transparent);
+}
+.timeline-item:last-child::before{display:none;}
+.timeline-dot{
+  width:24px;height:24px;border-radius:50%;
+  background:linear-gradient(135deg,var(--blue-500),var(--blue-700));
+  display:flex;align-items:center;justify-content:center;
+  font-size:.6rem;color:#fff;flex-shrink:0;margin-top:3px;
+  box-shadow:0 0 0 3px rgba(30,77,140,0.2);
+}
+.timeline-content{flex:1;}
+.timeline-year{font-size:.72rem;font-weight:700;color:var(--blue-400);text-transform:uppercase;letter-spacing:.08em;}
+.timeline-desc{font-size:.88rem;color:var(--gray-400);margin-top:2px;}
+
+/* STATS ROW */
+.stats-row{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;background:rgba(255,255,255,0.05);
+  margin:80px 0 0;border-radius:var(--radius-lg);overflow:hidden;
+}
+.stat-card{
+  background:var(--dark-2);padding:40px 30px;
+  text-align:center;position:relative;overflow:hidden;
+  transition:var(--transition);
+}
+.stat-card:hover{background:rgba(30,77,140,0.15);}
+.stat-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--blue-400),transparent);
+  opacity:0;transition:var(--transition);
+}
+.stat-card:hover::before{opacity:1;}
+.stat-number{
+  font-family:'Montserrat',sans-serif;font-weight:900;
+  font-size:2.8rem;color:#fff;display:block;letter-spacing:-.02em;
+}
+.stat-number .suffix{color:var(--blue-300);}
+.stat-label{font-size:.82rem;color:var(--gray-500);text-transform:uppercase;letter-spacing:.08em;margin-top:6px;}
+.stat-icon{font-size:1.2rem;color:var(--blue-600);margin-bottom:10px;}
+
+/* ═══════════════════════════════════════════
+   SERVICES SECTION
+═══════════════════════════════════════════ */
+#services{
+  padding:120px 0;
+  background:var(--black);
+  position:relative;overflow:hidden;
+}
+#services::before{
+  content:'';position:absolute;top:-200px;right:-200px;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(30,77,140,0.08),transparent 70%);
+}
+.services-header{text-align:center;max-width:680px;margin:0 auto 70px;}
+.services-header .section-subtitle{margin:0 auto;}
+.services-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+}
+.service-card{
+  background:var(--glass);backdrop-filter:blur(10px);
+  border:1px solid var(--glass-border);border-radius:var(--radius-md);
+  padding:32px 24px;transition:var(--transition);
+  position:relative;overflow:hidden;cursor:pointer;
+  group:true;
+}
+.service-card::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(30,77,140,0.15),transparent,rgba(30,77,140,0.05));
+  opacity:0;transition:var(--transition);border-radius:var(--radius-md);
+}
+.service-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--blue-500),var(--mint-400));
+  transform:scaleX(0);transform-origin:left;transition:var(--transition);
+}
+.service-card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(59,130,246,0.3);
+  box-shadow:0 20px 50px rgba(0,0,0,0.4),0 0 0 1px rgba(59,130,246,0.1);
+}
+.service-card:hover::before{opacity:1;}
+.service-card:hover::after{transform:scaleX(1);}
+.service-icon{
+  width:56px;height:56px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;margin-bottom:20px;
+  position:relative;z-index:1;transition:var(--transition);
+}
+.service-card:hover .service-icon{transform:scale(1.1) rotate(3deg);}
+.service-name{
+  font-family:'Poppins',sans-serif;font-weight:700;font-size:1rem;
+  color:#fff;margin-bottom:10px;position:relative;z-index:1;
+}
+.service-desc{
+  font-size:.84rem;color:var(--gray-500);line-height:1.7;
+  margin-bottom:20px;position:relative;z-index:1;
+}
+.service-link{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:.8rem;font-weight:600;color:var(--blue-400);
+  position:relative;z-index:1;transition:var(--transition);
+}
+.service-card:hover .service-link{gap:10px;color:var(--blue-300);}
+
+/* ═══════════════════════════════════════════
+   ELECTRONICS SECTION
+═══════════════════════════════════════════ */
+#electronics{
+  padding:120px 0;
+  background:linear-gradient(180deg,var(--dark),var(--black));
+}
+.electronics-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:60px;flex-wrap:wrap;gap:20px;}
+.electronics-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:24px;
+  margin-bottom:50px;
+}
+.product-card{
+  background:var(--glass);border:1px solid var(--glass-border);
+  border-radius:var(--radius-md);overflow:hidden;
+  transition:var(--transition);cursor:pointer;position:relative;
+}
+.product-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(59,130,246,0.25);
+  box-shadow:0 24px 50px rgba(0,0,0,0.5);
+}
+.product-img{
+  height:200px;overflow:hidden;position:relative;
+  background:linear-gradient(135deg,rgba(30,77,140,0.2),rgba(10,22,40,0.8));
+}
+.product-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+.product-card:hover .product-img img{transform:scale(1.08);}
+.product-img-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(10,22,40,0.6),transparent);
+}
+.product-badge{
+  position:absolute;top:12px;right:12px;
+  background:var(--blue-500);color:#fff;
+  font-size:.65rem;font-weight:700;padding:4px 10px;
+  border-radius:50px;text-transform:uppercase;letter-spacing:.06em;
+}
+.product-info{padding:20px;}
+.product-name{
+  font-family:'Poppins',sans-serif;font-weight:700;font-size:.95rem;
+  color:#fff;margin-bottom:6px;
+}
+.product-desc{font-size:.82rem;color:var(--gray-500);line-height:1.6;margin-bottom:16px;}
+.product-cta{
+  width:100%;padding:10px;border-radius:8px;
+  background:linear-gradient(135deg,var(--blue-600),var(--blue-700));
+  color:#fff;font-size:.8rem;font-weight:600;font-family:'Poppins',sans-serif;
+  transition:var(--transition);border:1px solid rgba(255,255,255,0.08);
+  display:flex;align-items:center;justify-content:center;gap:6px;
+}
+.product-cta:hover{background:linear-gradient(135deg,var(--blue-500),var(--blue-600));transform:none;}
+
+/* ═══════════════════════════════════════════
+   PROJECTS SECTION
+═══════════════════════════════════════════ */
+#projects{
+  padding:120px 0;background:var(--dark);
+  position:relative;overflow:hidden;
+}
+#projects::after{
+  content:'';position:absolute;bottom:-300px;left:-200px;
+  width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(circle,rgba(192,18,44,0.05),transparent 70%);
+}
+.projects-header{text-align:center;max-width:700px;margin:0 auto 70px;}
+.projects-filter{
+  display:flex;align-items:center;justify-content:center;
+  gap:8px;flex-wrap:wrap;margin-bottom:50px;
+}
+.filter-btn{
+  padding:8px 20px;border-radius:50px;
+  font-size:.8rem;font-weight:600;
+  border:1px solid rgba(255,255,255,0.1);
+  color:var(--gray-500);transition:var(--transition);
+  font-family:'Poppins',sans-serif;
+}
+.filter-btn:hover,.filter-btn.active{
+  background:var(--blue-600);border-color:var(--blue-500);color:#fff;
+}
+.projects-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.project-card{
+  background:var(--glass);border:1px solid var(--glass-border);
+  border-radius:var(--radius-md);overflow:hidden;
+  transition:var(--transition);position:relative;
+}
+.project-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(59,130,246,0.2);
+  box-shadow:0 24px 50px rgba(0,0,0,0.4);
+}
+.project-img{
+  height:220px;overflow:hidden;position:relative;
+}
+.project-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+.project-card:hover .project-img img{transform:scale(1.06);}
+.project-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(10,22,40,0.8),transparent 60%);
+}
+.project-category{
+  position:absolute;top:16px;left:16px;
+  background:rgba(10,22,40,0.8);backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.1);
+  color:var(--blue-300);font-size:.68rem;font-weight:700;
+  padding:4px 12px;border-radius:50px;text-transform:uppercase;letter-spacing:.06em;
+}
+.project-info{padding:24px;}
+.project-name{
+  font-family:'Poppins',sans-serif;font-weight:700;font-size:1rem;
+  color:#fff;margin-bottom:8px;
+}
+.project-client{
+  display:flex;align-items:center;gap:6px;
+  font-size:.78rem;color:var(--blue-400);font-weight:600;margin-bottom:10px;
+}
+.project-desc{font-size:.83rem;color:var(--gray-500);line-height:1.7;margin-bottom:16px;}
+.project-meta{
+  display:flex;align-items:center;justify-content:space-between;
+  padding-top:14px;border-top:1px solid rgba(255,255,255,0.06);
+}
+.project-loc{display:flex;align-items:center;gap:5px;font-size:.74rem;color:var(--gray-600);}
+.project-status{
+  font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:50px;
+  text-transform:uppercase;letter-spacing:.06em;
+}
+.status-complete{background:rgba(16,185,129,0.15);color:var(--mint-400);}
+.status-ongoing{background:rgba(30,77,140,0.2);color:var(--blue-300);}
+
+/* ═══════════════════════════════════════════
+   PARTNERSHIPS SECTION
+═══════════════════════════════════════════ */
+#partnerships{
+  padding:100px 0;
+  background:linear-gradient(180deg,var(--black),rgba(30,77,140,0.08),var(--black));
+  border-top:1px solid rgba(255,255,255,0.04);
+  border-bottom:1px solid rgba(255,255,255,0.04);
+}
+.partnerships-header{text-align:center;margin-bottom:60px;}
+.partners-grid{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:20px;
+}
+.partner-card{
+  background:var(--glass);border:1px solid var(--glass-border);
+  border-radius:var(--radius-md);padding:32px 20px;
+  display:flex;flex-direction:column;align-items:center;gap:14px;
+  transition:var(--transition);text-align:center;
+}
+.partner-card:hover{
+  background:rgba(30,77,140,0.12);border-color:rgba(59,130,246,0.25);
+  transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,0.3);
+}
+.partner-logo{
+  width:64px;height:64px;border-radius:16px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;position:relative;
+}
+.partner-name{
+  font-family:'Montserrat',sans-serif;font-weight:800;
+  font-size:.95rem;color:#fff;
+}
+.partner-type{font-size:.73rem;color:var(--gray-600);line-height:1.5;}
+.partner-badge{
+  display:flex;align-items:center;gap:4px;
+  background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.2);
+  color:var(--mint-400);font-size:.65rem;font-weight:700;
+  padding:3px 10px;border-radius:50px;text-transform:uppercase;letter-spacing:.06em;
+}
+
+/* ═══════════════════════════════════════════
+   VALUES SECTION
+═══════════════════════════════════════════ */
+#values{padding:120px 0;background:var(--dark-2);}
+.values-header{text-align:center;max-width:600px;margin:0 auto 70px;}
+.values-grid{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:16px;
+  margin-bottom:40px;
+}
+.value-card{
+  background:var(--glass);border:1px solid var(--glass-border);
+  border-radius:var(--radius-md);padding:28px 20px;
+  text-align:center;transition:var(--transition);
+  position:relative;overflow:hidden;
+}
+.value-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--card-color,var(--blue-500));
+  transform:scaleX(0);transition:var(--transition);
+}
+.value-card:hover::before{transform:scaleX(1);}
+.value-card:hover{
+  background:rgba(255,255,255,0.06);
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.3);
+}
+.value-icon{
+  width:52px;height:52px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;margin:0 auto 16px;
+  background:var(--icon-bg,rgba(30,77,140,0.2));
+  color:var(--icon-color,var(--blue-300));
+  transition:var(--transition);
+}
+.value-card:hover .value-icon{transform:scale(1.15) rotate(5deg);}
+.value-name{
+  font-family:'Poppins',sans-serif;font-weight:700;font-size:.9rem;
+  color:#fff;margin-bottom:8px;
+}
+.value-desc{font-size:.78rem;color:var(--gray-600);line-height:1.6;}
+
+/* ═══════════════════════════════════════════
+   GALLERY
+═══════════════════════════════════════════ */
+#gallery{padding:120px 0;background:var(--black);}
+.gallery-header{text-align:center;max-width:600px;margin:0 auto 60px;}
+.gallery-masonry{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  grid-template-rows:auto;
+  gap:16px;
+}
+.gallery-item{
+  border-radius:var(--radius-md);overflow:hidden;
+  position:relative;cursor:pointer;
+}
+.gallery-item img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .6s ease;
+  display:block;min-height:200px;
+}
+.gallery-item:hover img{transform:scale(1.06);}
+.gallery-item.tall{grid-row:span 2;}
+.gallery-item.wide{grid-column:span 2;}
+.gallery-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(10,22,40,0.85),transparent 60%);
+  opacity:0;transition:var(--transition);
+  display:flex;align-items:flex-end;padding:20px;
+}
+.gallery-item:hover .gallery-overlay{opacity:1;}
+.gallery-label{
+  font-family:'Poppins',sans-serif;font-weight:600;font-size:.85rem;color:#fff;
+}
+
+/* ═══════════════════════════════════════════
+   CONTACT SECTION
+═══════════════════════════════════════════ */
+#contact{
+  padding:120px 0;
+  background:linear-gradient(180deg,var(--dark),var(--black));
+}
+.contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:80px;align-items:start;}
+.contact-info .section-title{margin-bottom:16px;}
+.contact-info p{color:var(--gray-400);line-height:1.9;margin-bottom:32px;}
+.contact-details{display:flex;flex-direction:column;gap:16px;margin-bottom:40px;}
+.contact-detail{
+  display:flex;align-items:flex-start;gap:16px;
+  background:var(--glass);border:1px solid var(--glass-border);
+  border-radius:var(--radius-sm);padding:16px 20px;
+  transition:var(--transition);
+}
+.contact-detail:hover{background:var(--glass-hover);border-color:rgba(59,130,246,0.2);}
+.cd-icon{
+  width:40px;height:40px;border-radius:10px;
+  background:linear-gradient(135deg,var(--blue-600),var(--blue-800));
+  display:flex;align-items:center;justify-content:center;font-size:.9rem;
+  flex-shrink:0;
+}
+.cd-content{flex:1;}
+.cd-label{font-size:.72rem;color:var(--gray-600);text-transform:uppercase;letter-spacing:.08em;font-weight:600;}
+.cd-value{font-size:.92rem;color:var(--gray-300);margin-top:2px;}
+.contact-form-wrap{
+  background:var(--glass);backdrop-filter:blur(20px);
+  border:1px solid var(--glass-border);border-radius:var(--radius-lg);
+  padding:48px;
+}
+.form-title{
+  font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.5rem;
+  color:#fff;margin-bottom:8px;
+}
+.form-sub{font-size:.88rem;color:var(--gray-500);margin-bottom:32px;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.form-group{display:flex;flex-direction:column;gap:8px;}
+.form-group.full{grid-column:1/-1;}
+.form-label{font-size:.78rem;font-weight:600;color:var(--gray-400);text-transform:uppercase;letter-spacing:.06em;}
+.form-control{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:10px;padding:13px 16px;
+  color:#fff;font-size:.9rem;
+  transition:var(--transition);outline:none;
+  font-family:'Inter',sans-serif;
+}
+.form-control::placeholder{color:var(--gray-700);}
+.form-control:focus{border-color:var(--blue-400);background:rgba(30,77,140,0.1);box-shadow:0 0 0 3px rgba(30,77,140,0.15);}
+textarea.form-control{resize:vertical;min-height:120px;}
+.form-submit{
+  width:100%;padding:15px;border-radius:12px;margin-top:8px;
+  background:linear-gradient(135deg,var(--blue-500),var(--blue-700));
+  color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:.95rem;
+  border:1px solid rgba(255,255,255,0.1);
+  box-shadow:0 8px 30px rgba(30,77,140,0.4);
+  transition:var(--transition);display:flex;align-items:center;justify-content:center;gap:10px;
+  cursor:pointer;
+}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(30,77,140,0.6);}
+.form-success{
+  display:none;text-align:center;padding:30px;
+}
+.form-success i{font-size:3rem;color:var(--mint-400);margin-bottom:12px;}
+.form-success h4{font-family:'Montserrat',sans-serif;font-weight:700;font-size:1.2rem;margin-bottom:8px;}
+.form-success p{color:var(--gray-500);font-size:.88rem;}
+
+/* ═══════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════ */
+#footer{
+  background:var(--blue-900);
+  border-top:1px solid rgba(255,255,255,0.06);
+}
+.footer-main{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;
+  gap:60px;padding:80px 0 50px;
+}
+.footer-brand{}
+.footer-logo{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.footer-about{font-size:.88rem;color:var(--gray-600);line-height:1.8;margin-bottom:24px;max-width:300px;}
+.footer-socials{display:flex;gap:10px;}
+.footer-social{
+  width:36px;height:36px;border-radius:9px;
+  background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.82rem;color:var(--gray-500);transition:var(--transition);
+}
+.footer-social:hover{background:var(--blue-600);border-color:var(--blue-500);color:#fff;transform:translateY(-3px);}
+.footer-col-title{
+  font-family:'Poppins',sans-serif;font-weight:700;font-size:.9rem;
+  color:#fff;margin-bottom:20px;
+}
+.footer-links{display:flex;flex-direction:column;gap:10px;}
+.footer-link{
+  font-size:.85rem;color:var(--gray-600);transition:var(--transition);
+  display:flex;align-items:center;gap:8px;
+}
+.footer-link:hover{color:var(--blue-300);}
+.footer-link i{font-size:.7rem;color:var(--blue-600);}
+.footer-contact-items{display:flex;flex-direction:column;gap:14px;}
+.fci{display:flex;align-items:flex-start;gap:10px;}
+.fci-icon{color:var(--blue-400);font-size:.82rem;margin-top:3px;flex-shrink:0;}
+.fci-text{font-size:.84rem;color:var(--gray-600);line-height:1.6;}
+.footer-newsletter{margin-top:20px;}
+.newsletter-input{
+  display:flex;gap:8px;margin-top:12px;
+}
+.newsletter-input input{
+  flex:1;background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);border-radius:8px;
+  padding:10px 14px;color:#fff;font-size:.85rem;outline:none;
+  transition:var(--transition);font-family:'Inter',sans-serif;
+}
+.newsletter-input input::placeholder{color:var(--gray-700);}
+.newsletter-input input:focus{border-color:var(--blue-400);}
+.newsletter-btn{
+  padding:10px 16px;border-radius:8px;
+  background:var(--blue-600);color:#fff;
+  font-size:.8rem;font-weight:600;transition:var(--transition);
+  cursor:pointer;border:none;font-family:'Poppins',sans-serif;
+}
+.newsletter-btn:hover{background:var(--blue-500);}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,0.06);
+  padding:24px 0;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:12px;
+}
+.footer-copy{font-size:.8rem;color:var(--gray-700);}
+.footer-copy span{color:var(--blue-400);}
+.footer-bottom-links{display:flex;gap:20px;}
+.footer-bottom-link{font-size:.78rem;color:var(--gray-700);transition:var(--transition);}
+.footer-bottom-link:hover{color:var(--blue-300);}
+.back-to-top{
+  position:fixed;bottom:30px;right:30px;z-index:900;
+  width:46px;height:46px;border-radius:12px;
+  background:linear-gradient(135deg,var(--blue-500),var(--blue-700));
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:.9rem;box-shadow:var(--shadow-blue);
+  transition:var(--transition);opacity:0;pointer-events:none;cursor:pointer;
+  border:none;
+}
+.back-to-top.visible{opacity:1;pointer-events:all;}
+.back-to-top:hover{transform:translateY(-4px);}
+
+/* ═══════════════════════════════════════════
+   VISION/MISSION STRIP
+═══════════════════════════════════════════ */
+#vision-mission{
+  padding:80px 0;
+  background:linear-gradient(135deg,var(--blue-900),rgba(30,77,140,0.2),var(--dark));
+  border-top:1px solid rgba(59,130,246,0.1);
+  border-bottom:1px solid rgba(59,130,246,0.1);
+}
+.vm-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,0.05);}
+.vm-card{
+  background:var(--dark);padding:60px;
+  position:relative;overflow:hidden;
+}
+.vm-card:first-child{border-radius:var(--radius-lg) 0 0 var(--radius-lg);}
+.vm-card:last-child{border-radius:0 var(--radius-lg) var(--radius-lg) 0;}
+.vm-card::before{
+  content:'';position:absolute;top:-80px;right:-80px;
+  width:250px;height:250px;border-radius:50%;
+  background:radial-gradient(circle,rgba(30,77,140,0.15),transparent);
+}
+.vm-icon{font-size:2.5rem;margin-bottom:20px;}
+.vm-label{
+  font-family:'Montserrat',sans-serif;font-weight:700;font-size:.75rem;
+  color:var(--blue-400);text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px;
+}
+.vm-text{
+  font-size:1.05rem;color:var(--gray-300);line-height:1.9;font-style:italic;
+  position:relative;z-index:1;
+}
+.vm-quote{
+  position:absolute;top:30px;right:50px;
+  font-size:8rem;color:rgba(30,77,140,0.1);
+  font-family:'Montserrat',sans-serif;font-weight:900;line-height:1;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════ */
+@media (max-width:1200px){
+  .services-grid{grid-template-columns:repeat(3,1fr);}
+  .electronics-grid{grid-template-columns:repeat(3,1fr);}
+  .values-grid{grid-template-columns:repeat(3,1fr);}
+  .footer-main{grid-template-columns:1fr 1fr;gap:40px;}
+}
+@media (max-width:1024px){
+  .about-grid{grid-template-columns:1fr;gap:50px;}
+  .about-visual{display:none;}
+  .contact-grid{grid-template-columns:1fr;}
+  .projects-grid{grid-template-columns:repeat(2,1fr);}
+  .partners-grid{grid-template-columns:repeat(3,1fr);}
+  .stats-row{grid-template-columns:repeat(2,1fr);}
+  .hero-right{display:none;}
+  .vm-grid{grid-template-columns:1fr;}
+  .vm-card:first-child{border-radius:var(--radius-lg) var(--radius-lg) 0 0;}
+  .vm-card:last-child{border-radius:0 0 var(--radius-lg) var(--radius-lg);}
+}
+@media (max-width:768px){
+  .nav-links,.nav-ctas,.nav-search{display:none;}
+  .hamburger{display:flex;}
+  .services-grid{grid-template-columns:repeat(2,1fr);}
+  .electronics-grid{grid-template-columns:repeat(2,1fr);}
+  .values-grid{grid-template-columns:repeat(2,1fr);}
+  .gallery-masonry{grid-template-columns:repeat(2,1fr);}
+  .gallery-item.wide{grid-column:span 1;}
+  .projects-grid{grid-template-columns:1fr;}
+  .partners-grid{grid-template-columns:repeat(2,1fr);}
+  .about-features{grid-template-columns:1fr;}
+  .form-grid{grid-template-columns:1fr;}
+  .contact-form-wrap{padding:30px 24px;}
+  .top-contacts{display:none;}
+  #top-bar .container{justify-content:center;}
+  .stats-row{grid-template-columns:repeat(2,1fr);}
+  .footer-main{grid-template-columns:1fr;}
+  .hero-btns{flex-direction:column;align-items:flex-start;}
+  .vm-card{padding:40px 30px;}
+  .electronics-header{flex-direction:column;align-items:flex-start;}
+}
+@media (max-width:480px){
+  .services-grid{grid-template-columns:1fr;}
+  .electronics-grid{grid-template-columns:1fr;}
+  .values-grid{grid-template-columns:1fr;}
+  .gallery-masonry{grid-template-columns:1fr;}
+  .partners-grid{grid-template-columns:1fr;}
+  .stats-row{grid-template-columns:1fr;}
+  .hero-stats{flex-direction:column;gap:16px;}
+  .hero-stat-divider{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ TOP BAR ═══════════════ -->
+<div id="top-bar">
+  <div class="container">
+    <div class="top-contacts">
+      <a href="mailto:info@togdheere.com" class="top-contact-item">
+        <i class="fa-solid fa-envelope"></i>info@togdheere.com
+      </a>
+      <a href="tel:+252612345678" class="top-contact-item">
+        <i class="fa-solid fa-phone"></i>+252 61 234 5678
+      </a>
+      <a href="https://wa.me/252612345678" class="top-contact-item">
+        <i class="fa-brands fa-whatsapp"></i>WhatsApp
+      </a>
+      <span class="top-contact-item">
+        <i class="fa-solid fa-location-dot"></i>Mogadishu, Somalia
+      </span>
+      <span class="top-contact-item">
+        <i class="fa-regular fa-clock"></i>Mon–Sat: 8AM – 6PM
+      </span>
+    </div>
+    <div class="top-socials">
+      <a href="#" class="top-social-link"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#" class="top-social-link"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" class="top-social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="#" class="top-social-link"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="#" class="top-social-link"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="#" class="top-social-link"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ NAVBAR ═══════════════ -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <div class="logo-mark">TG</div>
+        <div class="logo-text">
+          <span class="logo-name">Togdheere</span>
+          <span class="logo-sub">Trading & Logistics</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#electronics" class="nav-link">Electronics</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#partnerships" class="nav-link">Partners</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+      <!-- NAV SEARCH -->
+      <div class="nav-search" id="nav-search">
+        <input type="text" class="nav-search-input" id="nav-search-input" placeholder="Search services, projects..." autocomplete="off"/>
+        <button class="nav-search-btn" id="nav-search-btn" aria-label="Search" onclick="toggleSearch()">
+          <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
+        </button>
+        <div class="search-results-dropdown" id="search-dropdown">
+          <div class="search-results-header">Quick Results</div>
+          <div id="search-results-list"></div>
+          <div class="search-no-results" id="search-no-results">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            No results found
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-ctas">
+        <a href="#projects" class="btn btn-ghost">Project Bidding</a>
+        <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i>Get In Touch</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#about" class="nav-link" onclick="closeMobile()">About</a>
+  <a href="#services" class="nav-link" onclick="closeMobile()">Services</a>
+  <a href="#electronics" class="nav-link" onclick="closeMobile()">Electronics</a>
+  <a href="#projects" class="nav-link" onclick="closeMobile()">Projects</a>
+  <a href="#partnerships" class="nav-link" onclick="closeMobile()">Partners</a>
+  <a href="#gallery" class="nav-link" onclick="closeMobile()">Gallery</a>
+  <a href="#contact" class="btn btn-primary" onclick="closeMobile()">Contact Us</a>
+</div>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section id="hero">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&q=80" alt="International Port Logistics Horn of Africa" loading="eager"/>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-particles" id="particles"></div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <i class="fa-solid fa-globe"></i>
+        Established 2010 · Horn of Africa's Premier Enterprise
+      </div>
+      <h1 class="hero-h1">
+        Powering Logistics,<br>
+        <span class="line-accent">Infrastructure &<br>Global Trade</span><br>
+        Across the Horn of Africa
+      </h1>
+      <p class="hero-sub">
+        Togdheere delivers world-class logistics, procurement, infrastructure, and supply chain solutions trusted by international organizations and global partners across Somalia and the region.
+      </p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn btn-primary" style="padding:14px 30px;font-size:.95rem;">
+          <i class="fa-solid fa-file-contract"></i>Join Project Bidding
+        </a>
+        <a href="#electronics" class="btn btn-red" style="padding:14px 30px;font-size:.95rem;">
+          <i class="fa-solid fa-microchip"></i>Explore Electronics
+        </a>
+        <a href="#about" class="btn btn-ghost" style="padding:14px 30px;font-size:.95rem;">
+          Learn More <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num"><span class="counter" data-target="14">0</span><span>+</span></div>
+          <div class="hero-stat-label">Years Operating</div>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <div class="hero-stat-num"><span class="counter" data-target="200">0</span><span>+</span></div>
+          <div class="hero-stat-label">Projects Delivered</div>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <div class="hero-stat-num"><span class="counter" data-target="5">0</span><span></span></div>
+          <div class="hero-stat-label">UN/INGO Partners</div>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <div class="hero-stat-num"><span class="counter" data-target="12">0</span><span></span></div>
+          <div class="hero-stat-label">Sectors Served</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-badge">
+      <div class="hero-badge-icon" style="background:rgba(16,185,129,0.15);color:var(--mint-400);">
+        <i class="fa-solid fa-shield-check"></i>
+      </div>
+      <div class="hero-badge-text">
+        <div class="hero-badge-title">UNICEF Verified Partner</div>
+        <div class="hero-badge-sub">International Partnership</div>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <div class="hero-badge-icon" style="background:rgba(30,77,140,0.2);color:var(--blue-300);">
+        <i class="fa-solid fa-ship"></i>
+      </div>
+      <div class="hero-badge-text">
+        <div class="hero-badge-title">Global Freight Network</div>
+        <div class="hero-badge-sub">Horn of Africa Coverage</div>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <div class="hero-badge-icon" style="background:rgba(212,168,67,0.15);color:var(--gold);">
+        <i class="fa-solid fa-award"></i>
+      </div>
+      <div class="hero-badge-text">
+        <div class="hero-badge-title">ISO-Grade Standards</div>
+        <div class="hero-badge-sub">Quality Assured Operations</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Scroll to explore</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ═══════════════ TRUST BAR ═══════════════ -->
+<div id="trust-bar">
+  <div style="overflow:hidden;">
+    <div class="trust-track" id="trust-track">
+      <span class="trust-item"><i class="fa-solid fa-handshake"></i>UNICEF Partner</span>
+      <span class="trust-dot"></span>
+      <span class="trust-item"><i class="fa-solid fa-building-un"></i>IOM Certified Supplier</span>
+      <span class="trust-dot"></span>
+      <span class="trust-item"><i class="fa-solid fa-truck-fast"></i>International Logistics</span>
+      <span class="trust-dot"></span>
+      <span class="trust-item"><i class="fa-solid fa-water"></i>Water Infrastructure</span>
+      <span class="trust-dot"></span>
+      <span class="trust-item"><i class="fa-solid fa-warehouse"></i>Warehousing & Distribution</span>
+      <span class="trust-dot"></span>
+      <span class="trust-item"><i class="fa-solid fa-hard-hat"></i>Construction & Infrastructure</span>
+      <span class="trust-dot"></span>
+      <span class="trust-item"><i class="fa-solid fa-microchip"></i>ICT & Electronics Supply</span>
+      <span class="trust-dot"></span>
+      <span class="trust-item"><i class="fa-solid fa-box-open"></i>Procurement Excellence</span>
+      <span class="trust-dot"></span>
+      <!-- Duplicate for infinite loop -->
+      <span class="trust-item"><i class="fa-solid fa-handshake"></i>UNICEF Partner</span>
+      <span class="trust-dot"></span>
+      <span class="trust-item"><i class="fa-solid fa-building-un"></i>IOM Certified Supplier</span>
+      <span class="trust-dot"></span>
+      <span class="trust-item"><i class="fa-solid fa-truck-fast"></i>International Logistics</span>
+      <span class="trust-dot"></span>
+      <span class="trust-item"><i class="fa-solid fa-water"></i>Water Infrastructure</span>
+      <span class="trust-dot"></span>
+      <span class="trust-item"><i class="fa-solid fa-warehouse"></i>Warehousing & Distribution</span>
+      <span class="trust-dot"></span>
+      <span class="trust-item"><i class="fa-solid fa-hard-hat"></i>Construction & Infrastructure</span>
+      <span class="trust-dot"></span>
+      <span class="trust-item"><i class="fa-solid fa-microchip"></i>ICT & Electronics Supply</span>
+      <span class="trust-dot"></span>
+      <span class="trust-item"><i class="fa-solid fa-box-open"></i>Procurement Excellence</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ ABOUT ═══════════════ -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual reveal-left">
+        <div class="about-img-main">
+          <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&q=80" alt="Togdheere Logistics Operations"/>
+          <div class="about-img-overlay"></div>
+        </div>
+        <div class="about-img-accent">
+          <img src="https://images.unsplash.com/photo-1523474438810-b04a2480633c?w=400&q=80" alt="Togdheere Warehousing"/>
+        </div>
+        <div class="about-badge">
+          <div class="about-badge-num">14+</div>
+          <div class="about-badge-label">Years of Excellence</div>
+        </div>
+      </div>
+      <div class="about-text reveal-right">
+        <div class="section-tag"><i class="fa-solid fa-building"></i>About Togdheere</div>
+        <h2 class="section-title">A Trusted Enterprise Driving Growth Across the <span class="text-gradient">Horn of Africa</span></h2>
+        <p>Founded in 2010 and headquartered in Mogadishu, Somalia, Togdheere General Trading & Logistics Co. has grown into one of the region's most respected enterprises. We deliver integrated commercial and development solutions for local and international organizations.</p>
+        <p>Our diverse portfolio spans general trading, logistics, construction, infrastructure development, procurement, warehousing, freight services, supply chain management, water infrastructure, borehole construction, electronics distribution, and ICT equipment supply.</p>
+        <div class="about-features">
+          <div class="about-feature"><i class="fa-solid fa-check-circle"></i>UNICEF-Approved Vendor</div>
+          <div class="about-feature"><i class="fa-solid fa-check-circle"></i>IOM Certified Supplier</div>
+          <div class="about-feature"><i class="fa-solid fa-check-circle"></i>UN Agency Experience</div>
+          <div class="about-feature"><i class="fa-solid fa-check-circle"></i>NGO Partnership Track</div>
+          <div class="about-feature"><i class="fa-solid fa-check-circle"></i>Pan-Somalia Operations</div>
+          <div class="about-feature"><i class="fa-solid fa-check-circle"></i>International Procurement</div>
+        </div>
+        <div class="about-timeline">
+          <div class="timeline-title">Company Growth Timeline</div>
+          <div class="timeline-items">
+            <div class="timeline-item">
+              <div class="timeline-dot"><i class="fa-solid fa-star"></i></div>
+              <div class="timeline-content">
+                <div class="timeline-year">2010 — Founded</div>
+                <div class="timeline-desc">Established in Mogadishu with a focus on general trading and logistics services.</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"><i class="fa-solid fa-building"></i></div>
+              <div class="timeline-content">
+                <div class="timeline-year">2013 — Construction Division</div>
+                <div class="timeline-desc">Expanded into infrastructure development, borehole drilling, and water supply systems.</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"><i class="fa-solid fa-globe"></i></div>
+              <div class="timeline-content">
+                <div class="timeline-year">2016 — International Partnerships</div>
+                <div class="timeline-desc">Secured first UNICEF and IOM procurement contracts. Established regional credibility.</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"><i class="fa-solid fa-microchip"></i></div>
+              <div class="timeline-content">
+                <div class="timeline-year">2020 — Electronics & ICT</div>
+                <div class="timeline-desc">Launched electronics distribution division supplying ICT equipment across Somalia.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Row -->
+    <div class="stats-row reveal">
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fa-solid fa-briefcase"></i></div>
+        <span class="stat-number"><span class="counter" data-target="200">0</span><span class="suffix">+</span></span>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fa-solid fa-handshake"></i></div>
+        <span class="stat-number"><span class="counter" data-target="5">0</span><span class="suffix"></span></span>
+        <div class="stat-label">UN/INGO Partners</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+        <span class="stat-number"><span class="counter" data-target="18">0</span><span class="suffix">+</span></span>
+        <div class="stat-label">Districts Served</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+        <span class="stat-number"><span class="counter" data-target="500">0</span><span class="suffix">K+</span></span>
+        <div class="stat-label">Beneficiaries Reached</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ VISION / MISSION ═══════════════ -->
+<section id="vision-mission">
+  <div class="container">
+    <div class="vm-grid">
+      <div class="vm-card reveal-left">
+        <div class="vm-quote">"</div>
+        <div class="vm-icon">🎯</div>
+        <div class="vm-label">Our Vision</div>
+        <p class="vm-text">To become the leading and most trusted company in General Trading, Logistics, and Construction across the Horn of Africa — a regional powerhouse recognized for excellence, integrity, and transformative impact.</p>
+      </div>
+      <div class="vm-card reveal-right">
+        <div class="vm-quote">"</div>
+        <div class="vm-icon">🚀</div>
+        <div class="vm-label">Our Mission</div>
+        <p class="vm-text">To provide high-quality, efficient, and sustainable services that deliver exceptional value, operational excellence, and long-term impact for clients and communities across the Horn of Africa and beyond.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SERVICES ═══════════════ -->
+<section id="services">
+  <div class="container">
+    <div class="services-header reveal">
+      <div class="section-tag"><i class="fa-solid fa-cogs"></i>Our Services</div>
+      <h2 class="section-title">Comprehensive Enterprise <span class="text-gradient">Solutions</span></h2>
+      <p class="section-subtitle">From international procurement to infrastructure development, we deliver integrated solutions that meet global standards across every sector we serve.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal" style="--i:0;">
+        <div class="service-icon" style="background:rgba(30,77,140,0.2);color:var(--blue-300);">
+          <i class="fa-solid fa-ship"></i>
+        </div>
+        <div class="service-name">International Shipping</div>
+        <p class="service-desc">End-to-end international freight and cargo transportation with full documentation, customs compliance, and port handling across the Horn of Africa.</p>
+        <a href="#contact" class="service-link">Request Quote <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal" style="--i:1;">
+        <div class="service-icon" style="background:rgba(16,185,129,0.15);color:var(--mint-400);">
+          <i class="fa-solid fa-box-open"></i>
+        </div>
+        <div class="service-name">Procurement & Logistics</div>
+        <p class="service-desc">Strategic sourcing, vendor management, international procurement operations, and seamless logistics coordination for UN agencies and NGOs.</p>
+        <a href="#contact" class="service-link">Request Quote <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal" style="--i:2;">
+        <div class="service-icon" style="background:rgba(212,168,67,0.15);color:var(--gold);">
+          <i class="fa-solid fa-link"></i>
+        </div>
+        <div class="service-name">Supply Chain Management</div>
+        <p class="service-desc">Optimized, resilient supply chains from source to destination — covering planning, inventory management, distribution, and performance monitoring.</p>
+        <a href="#contact" class="service-link">Request Quote <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal" style="--i:3;">
+        <div class="service-icon" style="background:rgba(192,18,44,0.15);color:var(--red-400);">
+          <i class="fa-solid fa-file-invoice"></i>
+        </div>
+        <div class="service-name">Clearing & Forwarding</div>
+        <p class="service-desc">Expert customs clearance, freight forwarding, port agency services, and documentation processing with regional regulatory expertise.</p>
+        <a href="#contact" class="service-link">Request Quote <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal" style="--i:4;">
+        <div class="service-icon" style="background:rgba(30,77,140,0.2);color:var(--blue-300);">
+          <i class="fa-solid fa-warehouse"></i>
+        </div>
+        <div class="service-name">Warehousing & Distribution</div>
+        <p class="service-desc">Secure, climate-managed warehousing facilities with inventory control systems and last-mile distribution networks across Somalia.</p>
+        <a href="#contact" class="service-link">Request Quote <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal" style="--i:5;">
+        <div class="service-icon" style="background:rgba(16,185,129,0.15);color:var(--mint-400);">
+          <i class="fa-solid fa-hard-hat"></i>
+        </div>
+        <div class="service-name">Construction & Infrastructure</div>
+        <p class="service-desc">Civil engineering, building construction, road infrastructure, facility development, and community infrastructure projects across the Horn.</p>
+        <a href="#contact" class="service-link">Request Quote <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal" style="--i:6;">
+        <div class="service-icon" style="background:rgba(59,130,246,0.15);color:#60a5fa;">
+          <i class="fa-solid fa-water"></i>
+        </div>
+        <div class="service-name">Water Supply Systems</div>
+        <p class="service-desc">Comprehensive water infrastructure solutions including pipeline installation, water kiosks, treatment systems, and community water supply projects.</p>
+        <a href="#contact" class="service-link">Request Quote <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal" style="--i:7;">
+        <div class="service-icon" style="background:rgba(212,168,67,0.15);color:var(--gold);">
+          <i class="fa-solid fa-drill"></i>
+        </div>
+        <div class="service-name">Borehole Drilling</div>
+        <p class="service-desc">Professional borehole rehabilitation and drilling services for communities, schools, health facilities, and humanitarian emergency response.</p>
+        <a href="#contact" class="service-link">Request Quote <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal" style="--i:8;">
+        <div class="service-icon" style="background:rgba(192,18,44,0.15);color:var(--red-400);">
+          <i class="fa-solid fa-truck"></i>
+        </div>
+        <div class="service-name">Freight Services</div>
+        <p class="service-desc">Road, sea, and air freight services across Somalia and the Horn of Africa with real-time tracking, fleet management, and cargo insurance.</p>
+        <a href="#contact" class="service-link">Request Quote <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal" style="--i:9;">
+        <div class="service-icon" style="background:rgba(30,77,140,0.2);color:var(--blue-300);">
+          <i class="fa-solid fa-microchip"></i>
+        </div>
+        <div class="service-name">Electronics Distribution</div>
+        <p class="service-desc">Wide-range electronics and ICT equipment supply including mobile phones, computers, accessories, and technology solutions for businesses and organizations.</p>
+        <a href="#contact" class="service-link">Request Quote <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal" style="--i:10;">
+        <div class="service-icon" style="background:rgba(16,185,129,0.15);color:var(--mint-400);">
+          <i class="fa-solid fa-globe"></i>
+        </div>
+        <div class="service-name">Global Contracting</div>
+        <p class="service-desc">International tendering, contract management, and project execution for UN agencies, government bodies, and multinational organizations.</p>
+        <a href="#contact" class="service-link">Request Quote <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal" style="--i:11;">
+        <div class="service-icon" style="background:rgba(212,168,67,0.15);color:var(--gold);">
+          <i class="fa-solid fa-bus"></i>
+        </div>
+        <div class="service-name">Transportation Services</div>
+        <p class="service-desc">Comprehensive fleet management, passenger transportation, personnel mobility, and logistics convoys for field operations and humanitarian missions.</p>
+        <a href="#contact" class="service-link">Request Quote <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ELECTRONICS HUB ═══════════════ -->
+<section id="electronics">
+  <div class="container">
+    <div class="electronics-header reveal">
+      <div>
+        <div class="section-tag"><i class="fa-solid fa-microchip"></i>Electronics Hub</div>
+        <h2 class="section-title">Premium Electronics & <span class="text-gradient">ICT Products</span></h2>
+        <p class="section-subtitle">Top-quality electronics, ICT equipment, and accessories available for bulk procurement, enterprise supply, and consumer sales across the Horn of Africa.</p>
+      </div>
+      <a href="#contact" class="btn btn-primary">
+        <i class="fa-solid fa-envelope"></i>Bulk Inquiry
+      </a>
+    </div>
+    <div class="electronics-grid">
+      <div class="product-card reveal" onclick="inquireProduct('Mobile Phones & Smartphones')">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&q=80" alt="Mobile Phones" loading="lazy"/>
+          <div class="product-img-overlay"></div>
+          <div class="product-badge">In Stock</div>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Mobile Phones & Smartphones</div>
+          <p class="product-desc">Latest Android and iOS devices for individual, corporate, and bulk procurement. All major brands available.</p>
+          <button class="product-cta"><i class="fa-solid fa-paper-plane"></i>Send Inquiry</button>
+        </div>
+      </div>
+      <div class="product-card reveal" onclick="inquireProduct('Batteries & Power Banks')">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=400&q=80" alt="Batteries Power Banks" loading="lazy"/>
+          <div class="product-img-overlay"></div>
+          <div class="product-badge">Wholesale</div>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Batteries & Power Banks</div>
+          <p class="product-desc">High-capacity batteries, portable chargers, and power solutions for mobile devices and industrial use.</p>
+          <button class="product-cta"><i class="fa-solid fa-paper-plane"></i>Send Inquiry</button>
+        </div>
+      </div>
+      <div class="product-card reveal" onclick="inquireProduct('Chargers & Adapters')">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=400&q=80" alt="Chargers Adapters" loading="lazy"/>
+          <div class="product-img-overlay"></div>
+          <div class="product-badge">Bulk Available</div>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Chargers & Adapters</div>
+          <p class="product-desc">Universal chargers, fast-charging adapters, solar chargers, and multi-device charging solutions.</p>
+          <button class="product-cta"><i class="fa-solid fa-paper-plane"></i>Send Inquiry</button>
+        </div>
+      </div>
+      <div class="product-card reveal" onclick="inquireProduct('ICT Equipment & Computers')">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=400&q=80" alt="ICT Computers Equipment" loading="lazy"/>
+          <div class="product-img-overlay"></div>
+          <div class="product-badge">Enterprise</div>
+        </div>
+        <div class="product-info">
+          <div class="product-name">ICT Equipment & Computers</div>
+          <p class="product-desc">Laptops, desktops, servers, networking equipment, and full ICT infrastructure solutions for organizations.</p>
+          <button class="product-cta"><i class="fa-solid fa-paper-plane"></i>Send Inquiry</button>
+        </div>
+      </div>
+      <div class="product-card reveal" onclick="inquireProduct('Audio & Headsets')">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=400&q=80" alt="Headsets Audio" loading="lazy"/>
+          <div class="product-img-overlay"></div>
+          <div class="product-badge">In Stock</div>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Audio & Headsets</div>
+          <p class="product-desc">Professional headsets, Bluetooth earphones, speakers, and audio equipment for individuals and offices.</p>
+          <button class="product-cta"><i class="fa-solid fa-paper-plane"></i>Send Inquiry</button>
+        </div>
+      </div>
+      <div class="product-card reveal" onclick="inquireProduct('Electronic Accessories')">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=400&q=80" alt="Electronic Accessories" loading="lazy"/>
+          <div class="product-img-overlay"></div>
+          <div class="product-badge">Wide Range</div>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Electronic Accessories</div>
+          <p class="product-desc">Cables, cases, screen protectors, USB hubs, memory cards, and a comprehensive range of device accessories.</p>
+          <button class="product-cta"><i class="fa-solid fa-paper-plane"></i>Send Inquiry</button>
+        </div>
+      </div>
+      <div class="product-card reveal" onclick="inquireProduct('Networking & Communication Equipment')">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&q=80" alt="Cisco Networking Equipment" loading="lazy"/>
+          <div class="product-img-overlay"></div>
+          <div class="product-badge">Enterprise</div>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Networking & Comms</div>
+          <p class="product-desc">Routers, switches, satellite comms, VSAT equipment, and network infrastructure for field and office deployments.</p>
+          <button class="product-cta"><i class="fa-solid fa-paper-plane"></i>Send Inquiry</button>
+        </div>
+      </div>
+      <div class="product-card reveal" onclick="inquireProduct('Solar & Energy Equipment')">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=400&q=80" alt="Solar Energy Equipment" loading="lazy"/>
+          <div class="product-img-overlay"></div>
+          <div class="product-badge">Renewable</div>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Solar & Energy Equipment</div>
+          <p class="product-desc">Solar panels, inverters, batteries, and off-grid energy solutions for communities, schools, and health facilities.</p>
+          <button class="product-cta"><i class="fa-solid fa-paper-plane"></i>Send Inquiry</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PROJECTS ═══════════════ -->
+<section id="projects">
+  <div class="container">
+    <div class="projects-header reveal">
+      <div class="section-tag"><i class="fa-solid fa-trophy"></i>Project Portfolio</div>
+      <h2 class="section-title">Proven Track Record of <span class="text-gradient">Excellence</span></h2>
+      <p class="section-subtitle">A showcase of landmark projects demonstrating our capability, scale, and commitment to delivering exceptional outcomes for clients and communities.</p>
+    </div>
+    <div class="projects-filter reveal">
+      <button class="filter-btn active" onclick="filterProjects('all',this)">All Projects</button>
+      <button class="filter-btn" onclick="filterProjects('water',this)">Water & WASH</button>
+      <button class="filter-btn" onclick="filterProjects('logistics',this)">Logistics</button>
+      <button class="filter-btn" onclick="filterProjects('construction',this)">Construction</button>
+      <button class="filter-btn" onclick="filterProjects('ict',this)">ICT Supply</button>
+    </div>
+    <div class="projects-grid" id="projects-grid">
+      <div class="project-card reveal" data-cat="water">
+        <div class="project-img">
+          <img src="https://images.unsplash.com/photo-1534951009808-766178b47a4f?w=600&q=80" alt="Borehole Water Project Somalia" loading="lazy"/>
+          <div class="project-overlay"></div>
+          <div class="project-category">Water Infrastructure</div>
+        </div>
+        <div class="project-info">
+          <div class="project-name">Borehole Rehabilitation — Baidoa Region</div>
+          <div class="project-client"><i class="fa-solid fa-building-un"></i>Client: UNICEF Somalia</div>
+          <p class="project-desc">Rehabilitation of 12 boreholes serving over 25,000 beneficiaries in Baidoa region, including pump installation, solar power systems, and community handover.</p>
+          <div class="project-meta">
+            <span class="project-loc"><i class="fa-solid fa-location-dot"></i>Baidoa, Somalia</span>
+            <span class="project-status status-complete">Completed</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card reveal" data-cat="logistics">
+        <div class="project-img">
+          <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80" alt="Humanitarian Supply Distribution" loading="lazy"/>
+          <div class="project-overlay"></div>
+          <div class="project-category">Humanitarian Logistics</div>
+        </div>
+        <div class="project-info">
+          <div class="project-name">Hygiene Supply Distribution — 5 Regions</div>
+          <div class="project-client"><i class="fa-solid fa-building-un"></i>Client: IOM Somalia</div>
+          <p class="project-desc">Large-scale distribution of hygiene kits, NFIs, and humanitarian supplies across 5 Somali regions serving displaced communities and returnees.</p>
+          <div class="project-meta">
+            <span class="project-loc"><i class="fa-solid fa-location-dot"></i>Multiple Regions</span>
+            <span class="project-status status-complete">Completed</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card reveal" data-cat="ict">
+        <div class="project-img">
+          <img src="https://images.unsplash.com/photo-1588702547923-7408dc60eb2e?w=600&q=80" alt="ICT Equipment Schools Supply" loading="lazy"/>
+          <div class="project-overlay"></div>
+          <div class="project-category">ICT Equipment</div>
+        </div>
+        <div class="project-info">
+          <div class="project-name">ICT Equipment Supply — Education Sector</div>
+          <div class="project-client"><i class="fa-solid fa-graduation-cap"></i>Client: Windle International Somalia</div>
+          <p class="project-desc">Supply and installation of computers, projectors, and networking equipment for 20+ schools as part of digital education enhancement programme.</p>
+          <div class="project-meta">
+            <span class="project-loc"><i class="fa-solid fa-location-dot"></i>Mogadishu & Regions</span>
+            <span class="project-status status-complete">Completed</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card reveal" data-cat="construction">
+        <div class="project-img">
+          <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=80" alt="School Furniture Production" loading="lazy"/>
+          <div class="project-overlay"></div>
+          <div class="project-category">Construction</div>
+        </div>
+        <div class="project-info">
+          <div class="project-name">School Furniture Production — Nationwide</div>
+          <div class="project-client"><i class="fa-solid fa-school"></i>Client: CPD Somalia</div>
+          <p class="project-desc">Manufacturing and supply of 5,000+ school furniture sets including desks, benches, and teacher tables for primary schools across Somalia.</p>
+          <div class="project-meta">
+            <span class="project-loc"><i class="fa-solid fa-location-dot"></i>Somalia-wide</span>
+            <span class="project-status status-complete">Completed</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card reveal" data-cat="water">
+        <div class="project-img">
+          <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80" alt="Water Kiosk Pipeline Infrastructure" loading="lazy"/>
+          <div class="project-overlay"></div>
+          <div class="project-category">Water Infrastructure</div>
+        </div>
+        <div class="project-info">
+          <div class="project-name">Water Kiosk Construction — Kismayo</div>
+          <div class="project-client"><i class="fa-solid fa-hands-helping"></i>Client: SSWC</div>
+          <p class="project-desc">Construction of 8 community water kiosks with distribution pipelines, benefiting 12,000 residents with clean and affordable water access.</p>
+          <div class="project-meta">
+            <span class="project-loc"><i class="fa-solid fa-location-dot"></i>Kismayo, Jubaland</span>
+            <span class="project-status status-complete">Completed</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card reveal" data-cat="logistics">
+        <div class="project-img">
+          <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&q=80" alt="Cross Border Freight Convoy" loading="lazy"/>
+          <div class="project-overlay"></div>
+          <div class="project-category">Freight Operations</div>
+        </div>
+        <div class="project-info">
+          <div class="project-name">Cross-Border Freight Operations</div>
+          <div class="project-client"><i class="fa-solid fa-truck"></i>Client: Multiple INGOs</div>
+          <p class="project-desc">Management of cross-border freight convoys transporting construction materials, food aid, and humanitarian supplies to remote areas of southern Somalia.</p>
+          <div class="project-meta">
+            <span class="project-loc"><i class="fa-solid fa-location-dot"></i>Southern Somalia</span>
+            <span class="project-status status-ongoing">Ongoing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PARTNERSHIPS ═══════════════ -->
+<section id="partnerships">
+  <div class="container">
+    <div class="partnerships-header reveal">
+      <div class="section-tag"><i class="fa-solid fa-handshake"></i>International Partnerships</div>
+      <h2 class="section-title">Trusted by World-Class <span class="text-gradient">Organizations</span></h2>
+      <p class="section-subtitle" style="margin:0 auto;">Our partnerships with leading international organizations are a testament to our quality, reliability, and professional excellence.</p>
+    </div>
+    <div class="partners-grid reveal">
+      <div class="partner-card">
+        <div class="partner-logo" style="background:rgba(0,120,200,0.15);">
+          <span style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.1rem;color:#0078c8;">UN</span>
+        </div>
+        <div class="partner-name">UNICEF</div>
+        <div class="partner-type">United Nations Children's Fund — Procurement & Logistics Partner</div>
+        <div class="partner-badge"><i class="fa-solid fa-check"></i>Verified Partner</div>
+      </div>
+      <div class="partner-card">
+        <div class="partner-logo" style="background:rgba(0,90,170,0.15);">
+          <span style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:1rem;color:#005aaa;">IOM</span>
+        </div>
+        <div class="partner-name">IOM</div>
+        <div class="partner-type">International Organization for Migration — Humanitarian Logistics Partner</div>
+        <div class="partner-badge"><i class="fa-solid fa-check"></i>Certified Supplier</div>
+      </div>
+      <div class="partner-card">
+        <div class="partner-logo" style="background:rgba(192,18,44,0.12);">
+          <span style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:1rem;color:var(--red-400);">CPD</span>
+        </div>
+        <div class="partner-name">CPD</div>
+        <div class="partner-type">Centre for Policy Development — Education & Procurement Partner</div>
+        <div class="partner-badge"><i class="fa-solid fa-check"></i>Active Partner</div>
+      </div>
+      <div class="partner-card">
+        <div class="partner-logo" style="background:rgba(16,185,129,0.12);">
+          <span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:.75rem;color:var(--mint-400);text-align:center;line-height:1.3;">WIN<br>DLE</span>
+        </div>
+        <div class="partner-name">Windle International</div>
+        <div class="partner-type">Windle International Somalia — Education Sector Supplier</div>
+        <div class="partner-badge"><i class="fa-solid fa-check"></i>Verified Partner</div>
+      </div>
+      <div class="partner-card">
+        <div class="partner-logo" style="background:rgba(59,130,246,0.12);">
+          <span style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:.9rem;color:var(--blue-300);">SSWC</span>
+        </div>
+        <div class="partner-name">SSWC</div>
+        <div class="partner-type">Somali Support & Water Consortium — Water Infrastructure Partner</div>
+        <div class="partner-badge"><i class="fa-solid fa-check"></i>Active Partner</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ VALUES ═══════════════ -->
+<section id="values">
+  <div class="container">
+    <div class="values-header reveal">
+      <div class="section-tag"><i class="fa-solid fa-star"></i>Core Values</div>
+      <h2 class="section-title">Principles That Drive Our <span class="text-gradient">Excellence</span></h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-card reveal" style="--card-color:#3b82f6;--icon-bg:rgba(30,77,140,0.2);--icon-color:#60a5fa;">
+        <div class="value-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="value-name">Integrity</div>
+        <p class="value-desc">We operate with complete transparency, honesty, and ethical conduct in every interaction.</p>
+      </div>
+      <div class="value-card reveal" style="--card-color:#10b981;--icon-bg:rgba(16,185,129,0.15);--icon-color:#34d399;">
+        <div class="value-icon"><i class="fa-solid fa-briefcase"></i></div>
+        <div class="value-name">Professionalism</div>
+        <p class="value-desc">We uphold the highest professional standards in our services, people, and processes.</p>
+      </div>
+      <div class="value-card reveal" style="--card-color:#d4a843;--icon-bg:rgba(212,168,67,0.15);--icon-color:#f0c96a;">
+        <div class="value-icon"><i class="fa-solid fa-lightbulb"></i></div>
+        <div class="value-name">Innovation</div>
+        <p class="value-desc">We continuously seek better, smarter, more efficient ways to deliver value to our clients.</p>
+      </div>
+      <div class="value-card reveal" style="--card-color:#ef4444;--icon-bg:rgba(192,18,44,0.15);--icon-color:#f87171;">
+        <div class="value-icon"><i class="fa-solid fa-certificate"></i></div>
+        <div class="value-name">Quality Assurance</div>
+        <p class="value-desc">Every output we deliver is subject to rigorous quality control and performance standards.</p>
+      </div>
+      <div class="value-card reveal" style="--card-color:#8b5cf6;--icon-bg:rgba(139,92,246,0.15);--icon-color:#a78bfa;">
+        <div class="value-icon"><i class="fa-solid fa-hard-hat"></i></div>
+        <div class="value-name">Safety</div>
+        <p class="value-desc">The safety of our team, clients, and communities is non-negotiable in every operation.</p>
+      </div>
+      <div class="value-card reveal" style="--card-color:#06b6d4;--icon-bg:rgba(6,182,212,0.15);--icon-color:#22d3ee;">
+        <div class="value-icon"><i class="fa-solid fa-leaf"></i></div>
+        <div class="value-name">Sustainability</div>
+        <p class="value-desc">We build solutions that endure and contribute to long-term environmental and social wellbeing.</p>
+      </div>
+      <div class="value-card reveal" style="--card-color:#f59e0b;--icon-bg:rgba(245,158,11,0.15);--icon-color:#fbbf24;">
+        <div class="value-icon"><i class="fa-solid fa-trophy"></i></div>
+        <div class="value-name">Excellence</div>
+        <p class="value-desc">We aim for excellence in every project, constantly exceeding the expectations of our clients.</p>
+      </div>
+      <div class="value-card reveal" style="--card-color:#ec4899;--icon-bg:rgba(236,72,153,0.15);--icon-color:#f472b6;">
+        <div class="value-icon"><i class="fa-solid fa-people-arrows"></i></div>
+        <div class="value-name">Mutual Respect</div>
+        <p class="value-desc">We treat every partner, client, and community member with dignity, fairness, and respect.</p>
+      </div>
+      <div class="value-card reveal" style="--card-color:#3b82f6;--icon-bg:rgba(30,77,140,0.2);--icon-color:#60a5fa;">
+        <div class="value-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+        <div class="value-name">Accountability</div>
+        <p class="value-desc">We take full responsibility for our commitments, deliverables, and the impact of our work.</p>
+      </div>
+      <div class="value-card reveal" style="--card-color:#10b981;--icon-bg:rgba(16,185,129,0.15);--icon-color:#34d399;">
+        <div class="value-icon"><i class="fa-solid fa-link"></i></div>
+        <div class="value-name">Long-Term Partnership</div>
+        <p class="value-desc">We build enduring relationships grounded in trust, shared goals, and sustained mutual success.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ GALLERY ═══════════════ -->
+<section id="gallery">
+  <div class="container-wide">
+    <div class="gallery-header reveal">
+      <div class="section-tag"><i class="fa-solid fa-images"></i>Our Gallery</div>
+      <h2 class="section-title">Our Work in <span class="text-gradient">Action</span></h2>
+      <p class="section-subtitle" style="margin:0 auto;">A visual showcase of our operations, projects, and impact across Somalia and the Horn of Africa.</p>
+    </div>
+    <div class="gallery-masonry">
+      <div class="gallery-item tall reveal">
+        <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&q=80" alt="Warehouse Cargo Operations" loading="lazy"/>
+        <div class="gallery-overlay"><div class="gallery-label">Warehousing & Cargo Operations</div></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80" alt="Field Operations" loading="lazy"/>
+        <div class="gallery-overlay"><div class="gallery-label">Field Inspection & Quality Control</div></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=80" alt="School Furniture Production" loading="lazy"/>
+        <div class="gallery-overlay"><div class="gallery-label">School Furniture Production</div></div>
+      </div>
+      <div class="gallery-item tall reveal">
+        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80" alt="ICT Supply Cisco Networking" loading="lazy"/>
+        <div class="gallery-overlay"><div class="gallery-label">Cisco & Lenovo ICT Supply</div></div>
+      </div>
+      <div class="gallery-item wide reveal">
+        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80" alt="Equipment Supply Logistics" loading="lazy"/>
+        <div class="gallery-overlay"><div class="gallery-label">HP Equipment Bulk Supply</div></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="https://images.unsplash.com/photo-1534951009808-766178b47a4f?w=600&q=80" alt="Water Borehole Project" loading="lazy"/>
+        <div class="gallery-overlay"><div class="gallery-label">Safety & Procurement Supply</div></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&q=80" alt="Logistics Transport Convoy" loading="lazy"/>
+        <div class="gallery-overlay"><div class="gallery-label">Networking Equipment Supply</div></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Construction Infrastructure" loading="lazy"/>
+        <div class="gallery-overlay"><div class="gallery-label">Safety Equipment Procurement</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CONTACT ═══════════════ -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info reveal-left">
+        <div class="section-tag"><i class="fa-solid fa-envelope"></i>Contact Us</div>
+        <h2 class="section-title">Let's Build Something <span class="text-gradient">Great Together</span></h2>
+        <p>Reach out to discuss your logistics, procurement, construction, or electronics needs. Our team is ready to provide tailored enterprise solutions for your organization.</p>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <div class="cd-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="cd-content">
+              <div class="cd-label">Email Address</div>
+              <div class="cd-value">info@togdheere.com</div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="cd-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="cd-content">
+              <div class="cd-label">Phone Number</div>
+              <div class="cd-value">+252 61 234 5678</div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="cd-icon"><i class="fa-brands fa-whatsapp"></i></div>
+            <div class="cd-content">
+              <div class="cd-label">WhatsApp</div>
+              <div class="cd-value">+252 61 234 5678</div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="cd-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="cd-content">
+              <div class="cd-label">Office Address</div>
+              <div class="cd-value">Mogadishu, Banadir Region, Federal Republic of Somalia</div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="cd-icon"><i class="fa-regular fa-clock"></i></div>
+            <div class="cd-content">
+              <div class="cd-label">Working Hours</div>
+              <div class="cd-value">Monday – Saturday: 8:00 AM – 6:00 PM</div>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <a href="https://wa.me/252612345678" class="btn btn-primary" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>WhatsApp Us
+          </a>
+          <a href="mailto:info@togdheere.com" class="btn btn-ghost">
+            <i class="fa-solid fa-envelope"></i>Send Email
+          </a>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <div class="contact-form-wrap">
+          <div id="form-container">
+            <div class="form-title">Send Us a Message</div>
+            <p class="form-sub">Fill in the form below and we'll get back to you within 24 hours.</p>
+            <div class="form-grid" id="inquiry-form">
+              <div class="form-group">
+                <label class="form-label">Full Name *</label>
+                <input type="text" class="form-control" id="f-name" placeholder="Your full name" required/>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email Address *</label>
+                <input type="email" class="form-control" id="f-email" placeholder="your@email.com" required/>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="f-phone" placeholder="+252 ..."/>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Company Name</label>
+                <input type="text" class="form-control" id="f-company" placeholder="Your organization"/>
+              </div>
+              <div class="form-group full">
+                <label class="form-label">Subject *</label>
+                <input type="text" class="form-control" id="f-subject" placeholder="Subject of your inquiry"/>
+              </div>
+              <div class="form-group full">
+                <label class="form-label">Message / Request Details *</label>
+                <textarea class="form-control" id="f-message" placeholder="Describe your requirements in detail..." rows="5"></textarea>
+              </div>
+            </div>
+            <button class="form-submit" onclick="submitForm()">
+              <i class="fa-solid fa-paper-plane"></i>Send Message
+            </button>
+          </div>
+          <div class="form-success" id="form-success">
+            <i class="fa-solid fa-circle-check"></i>
+            <h4>Message Sent Successfully!</h4>
+            <p>Thank you for reaching out. Our team will respond to your inquiry within 24 hours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="logo-mark">TG</div>
+          <div class="logo-text">
+            <span class="logo-name">Togdheere</span>
+            <span class="logo-sub">Trading & Logistics</span>
+          </div>
+        </div>
+        <p class="footer-about">A leading enterprise delivering world-class logistics, procurement, infrastructure, and supply chain solutions across the Horn of Africa since 2010.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="footer-social"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="footer-social"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="footer-social"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" class="footer-social"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="footer-social"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <div class="footer-links">
+          <a href="#about" class="footer-link"><i class="fa-solid fa-chevron-right"></i>About Us</a>
+          <a href="#services" class="footer-link"><i class="fa-solid fa-chevron-right"></i>Our Services</a>
+          <a href="#projects" class="footer-link"><i class="fa-solid fa-chevron-right"></i>Projects</a>
+          <a href="#electronics" class="footer-link"><i class="fa-solid fa-chevron-right"></i>Electronics Hub</a>
+          <a href="#partnerships" class="footer-link"><i class="fa-solid fa-chevron-right"></i>Partnerships</a>
+          <a href="#gallery" class="footer-link"><i class="fa-solid fa-chevron-right"></i>Gallery</a>
+          <a href="#contact" class="footer-link"><i class="fa-solid fa-chevron-right"></i>Contact Us</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Our Services</div>
+        <div class="footer-links">
+          <a href="#services" class="footer-link"><i class="fa-solid fa-chevron-right"></i>International Shipping</a>
+          <a href="#services" class="footer-link"><i class="fa-solid fa-chevron-right"></i>Procurement & Logistics</a>
+          <a href="#services" class="footer-link"><i class="fa-solid fa-chevron-right"></i>Construction & Infra</a>
+          <a href="#services" class="footer-link"><i class="fa-solid fa-chevron-right"></i>Water Supply Systems</a>
+          <a href="#services" class="footer-link"><i class="fa-solid fa-chevron-right"></i>Warehousing</a>
+          <a href="#services" class="footer-link"><i class="fa-solid fa-chevron-right"></i>Freight Services</a>
+          <a href="#services" class="footer-link"><i class="fa-solid fa-chevron-right"></i>Electronics Supply</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact Information</div>
+        <div class="footer-contact-items">
+          <div class="fci">
+            <i class="fa-solid fa-location-dot fci-icon"></i>
+            <div class="fci-text">Mogadishu, Banadir Region, Federal Republic of Somalia</div>
+          </div>
+          <div class="fci">
+            <i class="fa-solid fa-phone fci-icon"></i>
+            <div class="fci-text">+252 61 234 5678</div>
+          </div>
+          <div class="fci">
+            <i class="fa-solid fa-envelope fci-icon"></i>
+            <div class="fci-text">info@togdheere.com</div>
+          </div>
+          <div class="fci">
+            <i class="fa-brands fa-whatsapp fci-icon"></i>
+            <div class="fci-text">+252 61 234 5678</div>
+          </div>
+        </div>
+        <div class="footer-newsletter">
+          <div class="footer-col-title" style="margin-top:20px;">Newsletter</div>
+          <p style="font-size:.8rem;color:var(--gray-700);margin-bottom:0;">Stay updated with our latest projects and news.</p>
+          <div class="newsletter-input">
+            <input type="email" placeholder="Enter your email"/>
+            <button class="newsletter-btn">Subscribe</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2024 <span>Togdheere General Trading & Logistics Co.</span> All rights reserved.</div>
+      <div class="footer-bottom-links">
+        <a href="#" class="footer-bottom-link">Privacy Policy</a>
+        <a href="#" class="footer-bottom-link">Terms & Conditions</a>
+        <a href="#" class="footer-bottom-link">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<button class="back-to-top" id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<!-- ═══════════════ JAVASCRIPT ═══════════════ -->
+<script>
+/* ── PARTICLES ── */
+(function(){
+  const container=document.getElementById('particles');
+  for(let i=0;i<12;i++){
+    const p=document.createElement('div');
+    p.className='particle';
+    const size=Math.random()*6+2;
+    p.style.cssText=`
+      width:${size}px;height:${size}px;
+      left:${Math.random()*100}%;top:${Math.random()*100}%;
+      --duration:${4+Math.random()*6}s;
+      --delay:${-Math.random()*6}s;
+    `;
+    container.appendChild(p);
+  }
+})();
+
+/* ── NAVBAR SCROLL ── */
+const navbar=document.getElementById('navbar');
+window.addEventListener('scroll',()=>{
+  navbar.classList.toggle('scrolled',window.scrollY>60);
+  document.getElementById('back-top').classList.toggle('visible',window.scrollY>400);
+},{ passive:true });
+
+/* ── MOBILE MENU ── */
+const ham=document.getElementById('hamburger');
+const mob=document.getElementById('mobile-menu');
+ham.addEventListener('click',()=>{
+  ham.classList.toggle('open');
+  mob.classList.toggle('open');
+  document.body.style.overflow=mob.classList.contains('open')?'hidden':'';
+});
+function closeMobile(){
+  ham.classList.remove('open');
+  mob.classList.remove('open');
+  document.body.style.overflow='';
+}
+
+/* ── ACTIVE NAV ── */
+const sections=document.querySelectorAll('section[id]');
+const navLinks=document.querySelectorAll('.nav-link');
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      navLinks.forEach(l=>l.classList.remove('active'));
+      const active=document.querySelector(`.nav-link[href="#${e.target.id}"]`);
+      if(active)active.classList.add('active');
+    }
+  });
+},{threshold:.4});
+sections.forEach(s=>observer.observe(s));
+
+/* ── REVEAL ANIMATIONS ── */
+const revealObs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('visible'),
+        (parseInt(e.target.style.getPropertyValue('--i')||0)*80));
+      revealObs.unobserve(e.target);
+    }
+  });
+},{threshold:.1,rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>revealObs.observe(el));
+
+/* ── COUNTERS ── */
+function animateCounter(el){
+  const target=parseInt(el.dataset.target);
+  const duration=1800;
+  const step=target/duration*16;
+  let current=0;
+  const timer=setInterval(()=>{
+    current+=step;
+    if(current>=target){current=target;clearInterval(timer);}
+    el.textContent=Math.floor(current).toLocaleString();
+  },16);
+}
+const counterObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      animateCounter(e.target);
+      counterObs.unobserve(e.target);
+    }
+  });
+},{threshold:.5});
+document.querySelectorAll('.counter').forEach(el=>counterObs.observe(el));
+
+/* ── PROJECT FILTER ── */
+function filterProjects(cat,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.project-card').forEach(card=>{
+    if(cat==='all'||card.dataset.cat===cat){
+      card.style.display='';
+      card.style.opacity='0';
+      setTimeout(()=>{card.style.transition='opacity .4s ease';card.style.opacity='1';},50);
+    } else {
+      card.style.display='none';
+    }
+  });
+}
+
+/* ── PRODUCT INQUIRY ── */
+function inquireProduct(name){
+  document.getElementById('f-subject').value=`Product Inquiry: ${name}`;
+  document.getElementById('f-message').value=`I am interested in ${name} and would like to request more information, pricing, and availability.\n\n`;
+  const contact=document.getElementById('contact');
+  contact.scrollIntoView({behavior:'smooth',block:'center'});
+  setTimeout(()=>document.getElementById('f-name').focus(),800);
+}
+
+/* ── FORM SUBMIT ── */
+function submitForm(){
+  const name=document.getElementById('f-name').value;
+  const email=document.getElementById('f-email').value;
+  const subject=document.getElementById('f-subject').value;
+  const message=document.getElementById('f-message').value;
+  if(!name||!email||!subject||!message){
+    const fields=[
+      {id:'f-name',val:name},
+      {id:'f-email',val:email},
+      {id:'f-subject',val:subject},
+      {id:'f-message',val:message}
+    ];
+    fields.forEach(f=>{
+      const el=document.getElementById(f.id);
+      if(!f.val){
+        el.style.borderColor='var(--red-500)';
+        el.addEventListener('input',()=>el.style.borderColor='',{once:true});
+      }
+    });
+    return;
+  }
+  document.getElementById('form-container').style.opacity='0';
+  document.getElementById('form-container').style.transform='scale(.96)';
+  setTimeout(()=>{
+    document.getElementById('form-container').style.display='none';
+    const suc=document.getElementById('form-success');
+    suc.style.display='block';
+    suc.style.opacity='0';
+    setTimeout(()=>{suc.style.transition='opacity .5s';suc.style.opacity='1';},50);
+  },400);
+}
+
+/* ── RIPPLE EFFECT ── */
+document.querySelectorAll('.btn,.form-submit,.product-cta').forEach(btn=>{
+  btn.addEventListener('click',function(e){
+    const r=document.createElement('span');
+    const rect=this.getBoundingClientRect();
+    const size=Math.max(rect.width,rect.height);
+    r.style.cssText=`
+      position:absolute;border-radius:50%;
+      width:${size}px;height:${size}px;
+      left:${e.clientX-rect.left-size/2}px;
+      top:${e.clientY-rect.top-size/2}px;
+      background:rgba(255,255,255,0.2);
+      animation:ripple .6s ease-out forwards;
+      pointer-events:none;
+    `;
+    this.style.position='relative';this.style.overflow='hidden';
+    this.appendChild(r);
+    setTimeout(()=>r.remove(),600);
+  });
+});
+
+/* ── SMOOTH NAV LINKS ── */
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',function(e){
+    const target=document.querySelector(this.getAttribute('href'));
+    if(target){
+      e.preventDefault();
+      target.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+  });
+});
+
+/* ── NAVIGATION SEARCH ── */
+const SEARCH_DATA = [
+  // Services
+  {title:'International Shipping',sub:'Sea & air freight across Horn of Africa',icon:'fa-ship',color:'rgba(30,77,140,0.2)',iconColor:'#60a5fa',tag:'Service',tagColor:'rgba(59,130,246,0.15)',tagText:'#60a5fa',href:'#services'},
+  {title:'Procurement & Logistics',sub:'Strategic sourcing for UN agencies & NGOs',icon:'fa-box-open',color:'rgba(16,185,129,0.15)',iconColor:'#34d399',tag:'Service',tagColor:'rgba(16,185,129,0.15)',tagText:'#34d399',href:'#services'},
+  {title:'Supply Chain Management',sub:'End-to-end supply chain solutions',icon:'fa-link',color:'rgba(212,168,67,0.15)',iconColor:'#f0c96a',tag:'Service',tagColor:'rgba(212,168,67,0.15)',tagText:'#f0c96a',href:'#services'},
+  {title:'Construction & Infrastructure',sub:'Civil engineering & facility development',icon:'fa-hard-hat',color:'rgba(16,185,129,0.15)',iconColor:'#34d399',tag:'Service',tagColor:'rgba(16,185,129,0.15)',tagText:'#34d399',href:'#services'},
+  {title:'Warehousing & Distribution',sub:'Secure managed storage across Somalia',icon:'fa-warehouse',color:'rgba(30,77,140,0.2)',iconColor:'#60a5fa',tag:'Service',tagColor:'rgba(59,130,246,0.15)',tagText:'#60a5fa',href:'#services'},
+  {title:'Clearing & Forwarding',sub:'Customs clearance & freight forwarding',icon:'fa-file-invoice',color:'rgba(192,18,44,0.15)',iconColor:'#f87171',tag:'Service',tagColor:'rgba(192,18,44,0.15)',tagText:'#f87171',href:'#services'},
+  {title:'Borehole Drilling',sub:'Borehole rehabilitation across Somalia',icon:'fa-drill',color:'rgba(212,168,67,0.15)',iconColor:'#f0c96a',tag:'Service',tagColor:'rgba(212,168,67,0.15)',tagText:'#f0c96a',href:'#services'},
+  {title:'Water Supply Systems',sub:'Pipeline, kiosks & water infrastructure',icon:'fa-water',color:'rgba(59,130,246,0.15)',iconColor:'#60a5fa',tag:'Service',tagColor:'rgba(59,130,246,0.15)',tagText:'#60a5fa',href:'#services'},
+  {title:'Freight Services',sub:'Road, sea & air cargo transport',icon:'fa-truck',color:'rgba(192,18,44,0.15)',iconColor:'#f87171',tag:'Service',tagColor:'rgba(192,18,44,0.15)',tagText:'#f87171',href:'#services'},
+  {title:'Electronics Distribution',sub:'ICT equipment & consumer electronics',icon:'fa-microchip',color:'rgba(30,77,140,0.2)',iconColor:'#60a5fa',tag:'Service',tagColor:'rgba(59,130,246,0.15)',tagText:'#60a5fa',href:'#services'},
+  {title:'Global Contracting',sub:'International tendering & UN contracts',icon:'fa-globe',color:'rgba(16,185,129,0.15)',iconColor:'#34d399',tag:'Service',tagColor:'rgba(16,185,129,0.15)',tagText:'#34d399',href:'#services'},
+  // Products
+  {title:'Mobile Phones & Smartphones',sub:'Bulk supply of all major brands',icon:'fa-mobile-screen',color:'rgba(139,92,246,0.15)',iconColor:'#a78bfa',tag:'Product',tagColor:'rgba(139,92,246,0.15)',tagText:'#a78bfa',href:'#electronics'},
+  {title:'ICT Equipment & Computers',sub:'HP, Lenovo, Dell enterprise supply',icon:'fa-laptop',color:'rgba(30,77,140,0.2)',iconColor:'#60a5fa',tag:'Product',tagColor:'rgba(59,130,246,0.15)',tagText:'#60a5fa',href:'#electronics'},
+  {title:'Cisco Networking Equipment',sub:'Switches, routers & network infrastructure',icon:'fa-network-wired',color:'rgba(212,168,67,0.15)',iconColor:'#f0c96a',tag:'Product',tagColor:'rgba(212,168,67,0.15)',tagText:'#f0c96a',href:'#electronics'},
+  {title:'Solar & Energy Equipment',sub:'Off-grid solar systems & inverters',icon:'fa-solar-panel',color:'rgba(16,185,129,0.15)',iconColor:'#34d399',tag:'Product',tagColor:'rgba(16,185,129,0.15)',tagText:'#34d399',href:'#electronics'},
+  {title:'Batteries & Power Banks',sub:'High-capacity portable power solutions',icon:'fa-battery-full',color:'rgba(192,18,44,0.15)',iconColor:'#f87171',tag:'Product',tagColor:'rgba(192,18,44,0.15)',tagText:'#f87171',href:'#electronics'},
+  // Partners
+  {title:'UNICEF Partnership',sub:'UN Children\'s Fund — verified procurement partner',icon:'fa-building-un',color:'rgba(0,120,200,0.15)',iconColor:'#60a5fa',tag:'Partner',tagColor:'rgba(16,185,129,0.15)',tagText:'#34d399',href:'#partnerships'},
+  {title:'IOM Partnership',sub:'Intl. Organization for Migration — logistics',icon:'fa-building-un',color:'rgba(0,90,170,0.15)',iconColor:'#60a5fa',tag:'Partner',tagColor:'rgba(16,185,129,0.15)',tagText:'#34d399',href:'#partnerships'},
+  {title:'Windle International Somalia',sub:'Education sector ICT supply partner',icon:'fa-graduation-cap',color:'rgba(16,185,129,0.15)',iconColor:'#34d399',tag:'Partner',tagColor:'rgba(16,185,129,0.15)',tagText:'#34d399',href:'#partnerships'},
+  // Projects
+  {title:'Borehole Rehabilitation — Baidoa',sub:'UNICEF — 12 boreholes, 25,000 beneficiaries',icon:'fa-droplet',color:'rgba(59,130,246,0.15)',iconColor:'#60a5fa',tag:'Project',tagColor:'rgba(59,130,246,0.15)',tagText:'#60a5fa',href:'#projects'},
+  {title:'School Furniture Production',sub:'CPD — 5,000+ furniture sets nationwide',icon:'fa-chair',color:'rgba(212,168,67,0.15)',iconColor:'#f0c96a',tag:'Project',tagColor:'rgba(212,168,67,0.15)',tagText:'#f0c96a',href:'#projects'},
+  {title:'Hygiene Supply Distribution',sub:'IOM — 5 regions humanitarian logistics',icon:'fa-box-open',color:'rgba(16,185,129,0.15)',iconColor:'#34d399',tag:'Project',tagColor:'rgba(16,185,129,0.15)',tagText:'#34d399',href:'#projects'},
+  {title:'ICT Supply — Education Sector',sub:'Windle — computers for 20+ schools',icon:'fa-laptop',color:'rgba(30,77,140,0.2)',iconColor:'#60a5fa',tag:'Project',tagColor:'rgba(59,130,246,0.15)',tagText:'#60a5fa',href:'#projects'},
+  // Pages
+  {title:'About Togdheere',sub:'Company history, vision & leadership',icon:'fa-building',color:'rgba(255,255,255,0.06)',iconColor:'#9ca3af',tag:'Page',tagColor:'rgba(255,255,255,0.06)',tagText:'#9ca3af',href:'#about'},
+  {title:'Contact Us',sub:'Send an inquiry or project request',icon:'fa-envelope',color:'rgba(255,255,255,0.06)',iconColor:'#9ca3af',tag:'Page',tagColor:'rgba(255,255,255,0.06)',tagText:'#9ca3af',href:'#contact'},
+  {title:'Our Gallery',sub:'Project photos & company operations',icon:'fa-images',color:'rgba(255,255,255,0.06)',iconColor:'#9ca3af',tag:'Page',tagColor:'rgba(255,255,255,0.06)',tagText:'#9ca3af',href:'#gallery'},
+];
+
+let searchOpen=false;
+const navSearchBox=document.getElementById('nav-search');
+const searchInput=document.getElementById('nav-search-input');
+const searchDropdown=document.getElementById('search-dropdown');
+const searchIcon=document.getElementById('search-icon');
+const resultsList=document.getElementById('search-results-list');
+const noResults=document.getElementById('search-no-results');
+
+function toggleSearch(){
+  searchOpen=!searchOpen;
+  navSearchBox.classList.toggle('open',searchOpen);
+  if(searchOpen){
+    searchIcon.className='fa-solid fa-xmark';
+    setTimeout(()=>searchInput.focus(),350);
+  } else {
+    searchIcon.className='fa-solid fa-magnifying-glass';
+    searchInput.value='';
+    searchDropdown.classList.remove('visible');
+  }
+}
+
+function doSearch(q){
+  q=q.trim().toLowerCase();
+  resultsList.innerHTML='';
+  noResults.style.display='none';
+  if(q.length<1){searchDropdown.classList.remove('visible');return;}
+  const hits=SEARCH_DATA.filter(d=>
+    d.title.toLowerCase().includes(q)||
+    d.sub.toLowerCase().includes(q)||
+    d.tag.toLowerCase().includes(q)
+  ).slice(0,6);
+  if(hits.length===0){
+    searchDropdown.classList.add('visible');
+    noResults.style.display='block';
+    return;
+  }
+  hits.forEach(item=>{
+    const el=document.createElement('a');
+    el.className='search-result-item';
+    el.href=item.href;
+    el.innerHTML=`
+      <div class="sr-icon" style="background:${item.color};color:${item.iconColor};">
+        <i class="fa-solid ${item.icon}"></i>
+      </div>
+      <div class="sr-text">
+        <div class="sr-title">${highlight(item.title,q)}</div>
+        <div class="sr-sub">${item.sub}</div>
+      </div>
+      <span class="sr-tag" style="background:${item.tagColor};color:${item.tagText};">${item.tag}</span>
+    `;
+    el.addEventListener('click',()=>{
+      toggleSearch();
+    });
+    resultsList.appendChild(el);
+  });
+  searchDropdown.classList.add('visible');
+}
+
+function highlight(text,q){
+  const re=new RegExp(`(${q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`, 'gi');
+  return text.replace(re,'<mark style="background:rgba(59,130,246,0.3);color:#93c5fd;border-radius:2px;padding:0 2px;">$1</mark>');
+}
+
+searchInput.addEventListener('input',()=>doSearch(searchInput.value));
+searchInput.addEventListener('keydown',e=>{
+  if(e.key==='Escape') toggleSearch();
+});
+
+// Close on outside click
+document.addEventListener('click',e=>{
+  if(searchOpen && !navSearchBox.contains(e.target) && e.target.id!=='nav-search-btn'){
+    toggleSearch();
+  }
+});
+</script>
+</body>
+</html>
