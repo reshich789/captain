@@ -1,0 +1,47 @@
+
+    async function submitForm(){
+      // 1. Soo ururi xogta foomka
+      const formData = {
+        full_name: document.getElementById('f-name').value.trim(),
+        email_address: document.getElementById('f-email').value.trim(),
+        phone_number: document.getElementById('f-phone').value.trim(),
+        company_name: document.getElementById('f-company').value.trim(),
+        subject: document.getElementById('f-subject').value.trim(),
+        message: document.getElementById('f-message').value.trim()
+      };
+
+      // 2. Hubi in goobaha muhiimka ah la buuxiyey
+      if(!formData.full_name || !formData.email_address || !formData.subject || !formData.message){
+        alert('Fadlan buuxi dhammaan qaybaha leh (*).');
+        return;
+      }
+
+      try {
+        // 3. U dir xogta backend-ka (Node.js)
+        const response = await fetch('http://localhost:3000/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        });
+
+        const result = await response.json();
+
+        if(response.ok) {
+          // 4. Haddii ay guulaysato: Tusi fariinta guusha
+          document.getElementById('form-container').style.display = 'none';
+          document.getElementById('form-success').style.display = 'block';
+
+          // Dib u celi foomka 3 ilbiriqsi ka dib
+          setTimeout(() => {
+            document.getElementById('inquiry-form').reset(); // Haddii aad form tag u beddesho
+            document.getElementById('form-container').style.display = 'block';
+            document.getElementById('form-success').style.display = 'none';
+          }, 3000);
+        } else {
+          alert('Khalad ayaa dhacay: ' + result.message);
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Server-ka lama heli karo, hubi in Node.js uu socdo!');
+      }
+    }
