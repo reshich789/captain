@@ -17,12 +17,12 @@
       }
 
       try {
-        // 3. U dir xogta backend-ka (Node.js)
-        const response = await fetch('http://localhost:3000/api/contact', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(formData)
-        });
+       // Isbeddelka cusub ee rasmiga ah
+const response = await fetch('https://togdheere-backend.onrender.com/api/contact', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(formData)
+});
 
         const result = await response.json();
 
