@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Togdheere - Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 font-sans antialiased">
+
+    <!-- Top Navigation Bar -->
+    <nav class="bg-indigo-900 text-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <span class="p-2 bg-indigo-700 rounded-lg">
+                        <i class="fa-solid fa-server text-xl text-yellow-400"></i>
+                    </span>
+                    <div>
+                        <h1 class="text-xl font-bold tracking-wider">TOGDHEERE</h1>
+                        <p class="text-xs text-indigo-200">Admin Control Panel</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2 bg-indigo-800 px-3 py-1.5 rounded-full text-sm">
+                        <div class="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse"></div>
+                        <span class="font-medium">Osman Senior</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Top Stats and Settings Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <!-- Connection Card -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center space-x-4">
+                <div class="p-4 bg-blue-50 text-blue-600 rounded-xl">
+                    <i class="fa-solid fa-link text-2xl"></i>
+                </div>
+                <div class="flex-1">
+                    <h3 class="text-xs font-bold text-gray-400 uppercase tracking-wider">Isha Xogta (Database Mode)</h3>
+                    <select id="dbMode" class="mt-1 block w-full rounded-md border-gray-300 py-1.5 text-sm font-semibold focus:border-indigo-500 focus:ring-indigo-500 bg-gray-50 border px-2">
+                        <option value="live" selected>Live Render DB</option>
+                        <option value="mock">Tijaabo (Mock Data)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Stats Card - Total Messages -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center space-x-4">
+                <div class="p-4 bg-indigo-50 text-indigo-600 rounded-xl">
+                    <i class="fa-solid fa-envelope-open-text text-2xl"></i>
+                </div>
+                <div>
+                    <h3 class="text-xs font-bold text-gray-400 uppercase tracking-wider">Fariimaha Guud</h3>
+                    <p id="totalCount" class="text-2xl font-extrabold text-gray-900">0</p>
+                </div>
+            </div>
+
+            <!-- Stats Card - Unread Message Count -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center space-x-4">
+                <div class="p-4 bg-yellow-50 text-yellow-600 rounded-xl">
+                    <i class="fa-solid fa-bell text-2xl"></i>
+                </div>
+                <div>
+                    <h3 class="text-xs font-bold text-gray-400 uppercase tracking-wider">Fariimihii Maanta</h3>
+                    <p id="todayCount" class="text-2xl font-extrabold text-gray-900">0</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Render Endpoint Configurator -->
+        <div id="endpointSection" class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 mb-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center space-x-2 text-sm text-gray-600">
+                <i class="fa-solid fa-globe text-indigo-500"></i>
+                <span class="font-semibold">Render URL:</span>
+                <code class="bg-gray-100 px-2 py-1 rounded text-xs text-indigo-700" id="currentUrlText">https://togdheere-backend.onrender.com/api/contact</code>
+            </div>
+            <div class="flex space-x-2 w-full md:w-auto">
+                <input type="text" id="backendUrlInput" value="https://togdheere-backend.onrender.com/api/contact" class="flex-1 md:w-80 px-3 py-1.5 border rounded-lg text-xs" placeholder="Qor URL-ka Backend-ka">
+                <button id="saveUrlBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-1.5 rounded-lg text-xs font-semibold transition">Keydi URL</button>
+            </div>
+        </div>
+
+        <!-- Messages Section Wrapper -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+            <!-- Header bar for table/messages -->
+            <div class="px-6 py-5 border-b border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <h2 class="text-lg font-bold text-gray-900 flex items-center space-x-2">
+                    <i class="fa-solid fa-list text-indigo-600"></i>
+                    <span>Maamulka Fariimaha (Contacts)</span>
+                </h2>
+                <div class="flex items-center space-x-3 w-full sm:w-auto">
+                    <input type="text" id="searchInput" placeholder="Raadi magac, email ama fariin..." class="w-full sm:w-64 px-4 py-2 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <button id="refreshBtn" class="bg-indigo-50 hover:bg-indigo-100 text-indigo-700 p-2 rounded-xl transition flex items-center justify-center" title="Cusbooneysii">
+                        <i id="refreshIcon" class="fa-solid fa-arrows-rotate text-lg"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Loading Spinner -->
+            <div id="loadingState" class="hidden py-16 flex flex-col items-center justify-center">
+                <div class="w-12 h-12 border-4 border-indigo-200 border-t-indigo-600 rounded-full animate-spin"></div>
+                <p class="mt-4 text-sm text-gray-500 font-medium">La xiriiraya server-ka Render...</p>
+            </div>
+
+            <!-- Error State -->
+            <div id="errorState" class="hidden py-12 px-6 flex flex-col items-center justify-center text-center">
+                <div class="w-16 h-16 bg-red-50 text-red-500 rounded-full flex items-center justify-center text-2xl mb-4">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+                <h3 class="text-md font-bold text-gray-800">Waa la xiriiri waayey Server-ka Render!</h3>
+                <p class="text-sm text-gray-500 mt-1 max-w-md">Xaqiiji in koodhka backend-ka uu leeyahay "GET /api/contact" route isla markaana uu shidanyahay Server-ka.</p>
+                <button id="retryBtn" class="mt-4 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition">Isku day mar kale</button>
+            </div>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="hidden py-16 flex flex-col items-center justify-center text-center">
+                <div class="w-16 h-16 bg-gray-50 text-gray-400 rounded-full flex items-center justify-center text-2xl mb-4">
+                    <i class="fa-solid fa-box-open"></i>
+                </div>
+                <h3 class="text-md font-bold text-gray-800">Ma jiraan fariimo</h3>
+                <p class="text-sm text-gray-400 mt-1">Ma jiro qof foomka buuxiyey weli!</p>
+            </div>
+
+            <!-- Messages Table (Desktop view) -->
+            <div id="tableContainer" class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-100">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col" class="px-6 py-3.5 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">Macaamilka</th>
+                            <th scope="col" class="px-6 py-3.5 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">Mawduuca & Fariinta</th>
+                            <th scope="col" class="px-6 py-3.5 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">Taariikhda</th>
+                            <th scope="col" class="px-6 py-3.5 text-right text-xs font-bold text-gray-500 uppercase tracking-wider">Waxqabad</th>
+                        </tr>
+                    </thead>
+                    <tbody id="messagesTableBody" class="bg-white divide-y divide-gray-100">
+                        <!-- Rows injected by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Fariin View Modal (Pop-up to read full message) -->
+    <div id="viewModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl transform transition-all">
+            <div class="bg-indigo-900 text-white px-6 py-4 flex items-center justify-between">
+                <h3 class="font-bold text-lg">Faahfaahinta Fariinta</h3>
+                <button onclick="closeModal()" class="text-white/80 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
+            </div>
+            <div class="p-6 space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-gray-400 uppercase">Magaca Macaamilka</label>
+                    <p id="modalName" class="text-sm font-semibold text-gray-800 mt-1"></p>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-400 uppercase">Email</label>
+                        <p id="modalEmail" class="text-sm text-gray-600 mt-1 break-all"></p>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-400 uppercase">Tel / Shirkad</label>
+                        <p id="modalContact" class="text-sm text-gray-600 mt-1"></p>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-400 uppercase">Mawduuca (Subject)</label>
+                    <p id="modalSubject" class="text-sm font-bold text-indigo-800 mt-1"></p>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-400 uppercase">Fariinta</label>
+                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 text-sm text-gray-700 whitespace-pre-line mt-1 max-h-48 overflow-y-auto" id="modalMessage"></div>
+                </div>
+            </div>
+            <div class="bg-gray-50 px-6 py-3 flex justify-between items-center">
+                <span id="modalDate" class="text-xs text-gray-400"></span>
+                <button onclick="closeModal()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition">Xir</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alert Toast Notification -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-gray-900 text-white px-5 py-3.5 rounded-xl shadow-xl flex items-center space-x-2 translate-y-20 opacity-0 transition-all duration-300 pointer-events-none z-50">
+        <i id="toastIcon" class="fa-solid fa-circle-check text-green-400"></i>
+        <span id="toastMessage" class="text-sm font-medium"></span>
+    </div>
+
+    <script>
+        const mockData = [
+            { id: 101, name: "Maxamed Barre", email: "barre@togdheere.com", subject: "Dalab Naqshad Website", message: "Walaal waxaan rabaa in la ii sameeyo naqshad website u gaar ah xaruntayda cusub.", phone: "063445566", company: "Togdheere Retail", created_at: new Date().toISOString() }
+        ];
+
+        let messages = [];
+        let currentBackendUrl = localStorage.getItem('togdheere_backend_url') || 'https://togdheere-backend.onrender.com/api/contact';
+
+        document.getElementById('backendUrlInput').value = currentBackendUrl;
+        document.getElementById('currentUrlText').textContent = currentBackendUrl;
+
+        async function fetchMessages() {
+            const mode = document.getElementById('dbMode').value;
+            const tableContainer = document.getElementById('tableContainer');
+            const loadingState = document.getElementById('loadingState');
+            const errorState = document.getElementById('errorState');
+            const emptyState = document.getElementById('emptyState');
+            const refreshIcon = document.getElementById('refreshIcon');
+
+            refreshIcon.classList.add('animate-spin');
+            tableContainer.classList.add('hidden');
+            errorState.classList.add('hidden');
+            emptyState.classList.add('hidden');
+            loadingState.classList.remove('hidden');
+
+            if (mode === 'mock') {
+                setTimeout(() => {
+                    messages = [...mockData];
+                    finishFetch();
+                }, 400);
+            } else {
+                try {
+                    // CORS No-Cache Force bypassed
+                    const response = await fetch(currentBackendUrl, {
+                        method: 'GET',
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    
+                    if (!response.ok) throw new Error('Cilad server');
+                    messages = await response.json();
+                    finishFetch();
+                } catch (error) {
+                    console.error("Fetch Error:", error);
+                    loadingState.classList.add('hidden');
+                    errorState.classList.remove('hidden');
+                    refreshIcon.classList.remove('animate-spin');
+                }
+            }
+        }
+
+        function finishFetch() {
+            const tableContainer = document.getElementById('tableContainer');
+            const loadingState = document.getElementById('loadingState');
+            const emptyState = document.getElementById('emptyState');
+            const refreshIcon = document.getElementById('refreshIcon');
+
+            loadingState.classList.add('hidden');
+            refreshIcon.classList.remove('animate-spin');
+            
+            updateStats();
+
+            if (!messages || messages.length === 0) {
+                emptyState.classList.remove('hidden');
+            } else {
+                renderTable(messages);
+                tableContainer.classList.remove('hidden');
+            }
+        }
+
+        function renderTable(dataToRender) {
+            const tableBody = document.getElementById('messagesTableBody');
+            tableBody.innerHTML = '';
+
+            dataToRender.forEach(msg => {
+                const dateFormatted = new Date(msg.created_at).toLocaleDateString('so-SO', {
+                    day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit'
+                });
+
+                const row = document.createElement('tr');
+                row.className = 'hover:bg-gray-50/80 transition-all';
+                row.innerHTML = `
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-indigo-100 text-indigo-700 font-bold rounded-xl flex items-center justify-center text-sm">
+                                ${(msg.name || 'U').charAt(0).toUpperCase()}
+                            </div>
+                            <div class="ml-3">
+                                <div class="text-sm font-bold text-gray-900">${msg.name || 'No Name'}</div>
+                                <div class="text-xs text-gray-500">${msg.email || ''}</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4">
+                        <div class="text-sm font-bold text-indigo-900 line-clamp-1">${msg.subject || 'No Subject'}</div>
+                        <div class="text-xs text-gray-500 line-clamp-1 mt-0.5">${msg.message || ''}</div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-xs font-semibold text-gray-500">
+                        ${dateFormatted}
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-right text-xs font-medium space-x-2">
+                        <button onclick="viewMessage(${msg.id})" class="inline-flex items-center px-3 py-1.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 rounded-lg transition">
+                            <i class="fa-solid fa-eye mr-1"></i> Arag
+                        </button>
+                        <button onclick="deleteMessage(${msg.id})" class="inline-flex items-center px-3 py-1.5 bg-red-50 hover:bg-red-100 text-red-600 rounded-lg transition">
+                            <i class="fa-solid fa-trash mr-1"></i> Tirtir
+                        </button>
+                    </td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        function viewMessage(id) {
+            const msg = messages.find(m => m.id === id);
+            if (!msg) return;
+
+            document.getElementById('modalName').textContent = msg.name;
+            document.getElementById('modalEmail').textContent = msg.email;
+            document.getElementById('modalContact').textContent = `${msg.phone || 'Ma jiro'} / ${msg.company || 'Ma jiro'}`;
+            document.getElementById('modalSubject').textContent = msg.subject;
+            document.getElementById('modalMessage').textContent = msg.message;
+            document.getElementById('modalDate').textContent = new Date(msg.created_at).toLocaleString();
+
+            const modal = document.getElementById('viewModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('viewModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        async function deleteMessage(id) {
+            if (!confirm('Ma hubtaa inaad rabto inaad tirtirto fariintan?')) return;
+            const mode = document.getElementById('dbMode').value;
+
+            if (mode === 'mock') {
+                const index = mockData.findIndex(m => m.id === id);
+                if (index > -1) mockData.splice(index, 1);
+                showToast("Fariinta waa la tirtiray!", "success");
+                fetchMessages();
+            } else {
+                try {
+                    const response = await fetch(`${currentBackendUrl}/${id}`, { method: 'DELETE' });
+                    if (!response.ok) throw new Error('Tirtiris ku fashilantay');
+                    showToast("Alxamdulillah, fariinta waa la tirtiray!", "success");
+                    fetchMessages();
+                } catch (error) {
+                    showToast("Cilad baa ka dhacday tirtirista!", "error");
+                }
+            }
+        }
+
+        function updateStats() {
+            document.getElementById('totalCount').textContent = messages.length;
+            const today = new Date().toDateString();
+            const todayMsgs = messages.filter(msg => new Date(msg.created_at).toDateString() === today);
+            document.getElementById('todayCount').textContent = todayMsgs.length;
+        }
+
+        function showToast(message, type) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            const toastIcon = document.getElementById('toastIcon');
+
+            toastMessage.textContent = message;
+            toastIcon.className = type === 'success' ? 'fa-solid fa-circle-check text-green-400' : 'fa-solid fa-circle-xmark text-red-400';
+
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+                toast.classList.remove('translate-y-0', 'opacity-100');
+            }, 3000);
+        }
+
+        document.getElementById('saveUrlBtn').addEventListener('click', () => {
+            const newUrl = document.getElementById('backendUrlInput').value.trim();
+            if (newUrl) {
+                currentBackendUrl = newUrl;
+                localStorage.setItem('togdheere_backend_url', newUrl);
+                document.getElementById('currentUrlText').textContent = newUrl;
+                showToast("URL-ka waa la keydiyey!", "success");
+                fetchMessages();
+            }
+        });
+
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            const filtered = messages.filter(msg => 
+                (msg.name || '').toLowerCase().includes(term) || 
+                (msg.email || '').toLowerCase().includes(term) || 
+                (msg.subject || '').toLowerCase().includes(term)
+            );
+            renderTable(filtered);
+        });
+
+        document.getElementById('dbMode').addEventListener('change', fetchMessages);
+        document.getElementById('refreshBtn').addEventListener('click', fetchMessages);
+        document.getElementById('retryBtn').addEventListener('click', fetchMessages);
+
+        window.onload = fetchMessages;
+    </script>
+</body>
+</html>
