@@ -1,57 +1,47 @@
-async function submitForm() {
-  // 1. Soo ururi xogta foomka (Magacyada keys-ka waxaa loo qaabeeyey backend-ka)
+async function submitForm(){
+  // 1. Soo ururi xogta foomka (Waxaan u beddelay si uu u waafaqo req.body-ga backend-kaaga)
   const formData = {
-    name: document.getElementById('f-name').value.trim(),
-    email: document.getElementById('f-email').value.trim(),
-    phone: document.getElementById('f-phone').value.trim(),
-    company: document.getElementById('f-company').value.trim(),
+    full_name: document.getElementById('f-name').value.trim(),
+    email_address: document.getElementById('f-email').value.trim(),
+    phone_number: document.getElementById('f-phone').value.trim(),
+    company_name: document.getElementById('f-company').value.trim(),
     subject: document.getElementById('f-subject').value.trim(),
     message: document.getElementById('f-message').value.trim()
   };
 
-  // 2. Hubi in goobaha muhiimka ah la buuxiyey (Name, Email, Subject, iyo Message waa khasab)
-  if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+  // 2. Hubi in goobaha muhiimka ah la buuxiyey (Sida uu backend-kaagu rabo)
+  if(!formData.full_name || !formData.email_address || !formData.subject || !formData.message){
     alert('Fadlan buuxi dhammaan qaybaha leh (*).');
     return;
   }
 
   try {
-    // 3. U dir xogta foomka backend-ka rasmiga ah ee Render
+    // 3. Isku-xirka tooska ah ee Render URL
     const response = await fetch('https://togdheere-backend.onrender.com/api/contact', {
-      method: 'POST',
-      headers: { 
-        'Content-Type': 'application/json' 
-      },
-      body: JSON.stringify(formData)
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
     });
 
     const result = await response.json();
 
-    if (response.ok) {
-      // 4. Haddii ay guulaysato: Qari foomka, tusi fariinta guusha
+    if(response.ok) {
+      // 4. Haddii ay guulaysato: Tusi fariinta guusha
       document.getElementById('form-container').style.display = 'none';
       document.getElementById('form-success').style.display = 'block';
 
-      // 5. Dib u celi foomka caadiga ah 3 ilbiriqsi ka dib
+      // Dib u celi foomka 3 ilbiriqsi ka dib
       setTimeout(() => {
-        // Hubi in HTML foomkaaga uu leeyahay id="inquiry-form"
         const formElement = document.getElementById('inquiry-form');
-        if (formElement) {
-          formElement.reset();
-        }
+        if(formElement) formElement.reset(); 
         
-        // Dib u soo celinta wejiga foomka
         document.getElementById('form-container').style.display = 'block';
         document.getElementById('form-success').style.display = 'none';
       }, 3000);
-
     } else {
-      // Haddii backend-ku uu soo celiyo khalad la yaqaan
-      alert('Khalad ayaa dhacay: ' + (result.message || 'Xogta lama kaydin karo.'));
+      alert('Khalad ayaa dhacay: ' + (result.error || result.message));
     }
-
   } catch (error) {
-    // Haddii uu jiro dhib dhanka internet-ka ama server-ka ah
     console.error('Error:', error);
     alert('Server-ka lama heli karo, hubi in Server-ka Render uu shaqaynayo!');
   }
