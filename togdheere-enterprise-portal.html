@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Togdheere Enterprise Portal | Global Logistics & Admin Dashboard</title>
+<meta name="description" content="Togdheere General Trading & Logistics Co. premium corporate portal and admin dashboard inspired by global logistics dashboards.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  color-scheme: dark;
+  --bg: #040b18;
+  --surface: #0c1630;
+  --surface-strong: #121e3b;
+  --surface-soft: #152549;
+  --border: rgba(255,255,255,0.08);
+  --text: #f8fbff;
+  --muted: #98a5c8;
+  --accent: #4ae3ff;
+  --accent-strong: #3ce5ff;
+  --accent-soft: rgba(74,227,255,0.16);
+  --purple: #9c5cff;
+  --gold: #f7c34a;
+  --shadow: 0 24px 80px rgba(0,0,0,0.35);
+  --radius: 24px;
+  --radius-sm: 14px;
+  --transition: 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  --container: 1200px;
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:var(--font-body);background:radial-gradient(circle at top, rgba(74,227,255,0.08), transparent 35%), linear-gradient(180deg,#060c18 0%,#020510 100%);color:var(--text);overflow-x:hidden;}
+img,video{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+button,input,textarea,select{font:inherit;}
+button{cursor:pointer;}
+.container{width:min(100% - 32px, var(--container));margin:0 auto;}
+section{padding:80px 0;position:relative;}
+.section-title{font-family:var(--font-heading);font-size:clamp(2.5rem,4vw,4rem);line-height:1.02;color:var(--text);margin-bottom:12px;}
+.section-sub{color:var(--muted);max-width:760px;line-height:1.8;font-size:1rem;margin-bottom:36px;}
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity 0.9s ease,var(--transition);}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+.sticky-nav{position:sticky;top:0;z-index:999;background:rgba(4,11,24,0.92);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,0.05);}
+.navbar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0;}
+.brand{display:flex;align-items:center;gap:14px;}
+.brand-mark{width:46px;height:46px;border-radius:16px;background:linear-gradient(135deg,var(--accent),var(--purple));display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:1.15rem;font-weight:800;color:#051725;}
+.brand-text{line-height:1.05;}
+.brand-title{font-size:1rem;font-weight:800;color:var(--text);}
+.brand-sub{font-size:0.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.16em;}
+.nav-links{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+.nav-links a{font-weight:600;font-size:0.95rem;color:var(--muted);padding:10px 12px;border-radius:999px;transition:var(--transition);}
+.nav-links a:hover{color:var(--text);background:rgba(74,227,255,0.08);}
+.cta-link{background:linear-gradient(135deg,var(--accent),var(--purple));color:#051725;padding:14px 24px;border-radius:999px;font-weight:700;}
+.hero{min-height:calc(100vh - 96px);display:grid;grid-template-columns:1.05fr 0.95fr;gap:40px;align-items:center;}
+.hero-visual{position:relative;min-height:560px;border-radius:36px;overflow:hidden;box-shadow:var(--shadow);}
+.hero-visual::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,7,20,0.22),rgba(0,0,0,0.72));z-index:1;}
+.hero-visual img{height:100%;object-fit:cover;filter:contrast(1.05) saturate(1.1);}
+.hero-visual .hero-overlay{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 40%,rgba(3,16,39,0.9) 100%);}
+.hero-copy{max-width:620px;}
+.hero-copy .eyebrow{font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:0.22em;color:var(--accent);margin-bottom:18px;}
+.hero-copy h1{font-family:var(--font-heading);font-size:clamp(3rem,6vw,5rem);line-height:0.95;letter-spacing:-0.04em;margin-bottom:24px;}
+.hero-copy p{color:rgba(248,251,255,0.82);font-size:1.05rem;line-height:1.9;margin-bottom:34px;}
+.hero-actions{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:40px;}
+.button, .button-secondary{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 30px;border-radius:999px;font-weight:700;letter-spacing:0.02em;transition:var(--transition);position:relative;overflow:hidden;}
+.button{background:linear-gradient(135deg,var(--accent),var(--purple));color:#051725;}
+.button::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at center,rgba(255,255,255,0.28),transparent 40%);opacity:0;transition:opacity 0.35s ease;}
+.button:hover::after{opacity:1;}
+.button:hover{transform:translateY(-2px);}
+.button-secondary{background:rgba(255,255,255,0.07);color:var(--text);border:1px solid rgba(255,255,255,0.12);}
+.button-secondary:hover{background:rgba(255,255,255,0.14);}
+.hero-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;}
+.metric-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:28px;padding:24px;min-height:136px;display:flex;flex-direction:column;justify-content:space-between;}
+.metric-card strong{font-size:2.5rem;display:block;color:var(--text);}
+.metric-card span{color:var(--muted);text-transform:uppercase;letter-spacing:0.18em;font-size:0.78rem;margin-top:8px;}
+.split-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+.card{background:var(--surface);border:1px solid rgba(255,255,255,0.08);border-radius:30px;box-shadow:0 24px 60px rgba(0,0,0,0.24);}
+.card-inner{padding:32px;}
+.card-title{font-family:var(--font-heading);font-size:1.3rem;font-weight:800;color:var(--text);margin-bottom:12px;}
+.card-text{color:var(--muted);line-height:1.8;}
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;}
+.service-card, .project-card, .partner-card, .gallery-card, .admin-card{background:var(--surface-strong);border:1px solid rgba(255,255,255,0.08);border-radius:28px;overflow:hidden;box-shadow:0 24px 55px rgba(0,0,0,0.22);transition:var(--transition);}
+.service-card:hover, .project-card:hover, .gallery-card:hover, .partner-card:hover, .admin-card:hover{transform:translateY(-6px);}
+.service-card img, .project-card img, .gallery-card img{height:240px;width:100%;object-fit:cover;transition:transform 0.9s ease;}
+.service-card:hover img, .project-card:hover img, .gallery-card:hover img{transform:scale(1.06);}
+.card-body{padding:28px;}
+.card-label{font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.18em;color:var(--accent);margin-bottom:12px;}
+.card-heading{font-family:var(--font-heading);font-size:1.45rem;line-height:1.1;margin-bottom:14px;color:var(--text);}
+.card-copy{color:var(--muted);line-height:1.8;margin-bottom:18px;}
+.label-pill{display:inline-flex;padding:8px 14px;border-radius:999px;font-weight:700;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.16em;background:rgba(74,227,255,0.12);color:var(--accent);margin-bottom:16px;}
+.stat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:28px;}
+.stat-widget{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:28px;padding:26px;}
+.stat-widget strong{display:block;font-size:2rem;color:var(--text);margin-bottom:10px;}
+.stat-widget span{color:var(--muted);font-size:0.93rem;}
+.partners-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;}
+.partner-card{padding:28px;display:flex;align-items:center;justify-content:center;min-height:160px;}
+.partner-card span{font-size:1rem;font-weight:700;color:var(--text);}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;}
+.gallery-card{position:relative;min-height:320px;}
+.gallery-card::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(4,11,24,0.88) 100%);}
+.gallery-label{position:absolute;left:24px;bottom:24px;color:#fff;font-weight:800;font-size:1rem;z-index:1;}
+.contact-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:28px;}
+.contact-card{background:var(--surface);border:1px solid rgba(255,255,255,0.08);border-radius:28px;padding:32px;}
+.contact-card h3{margin-bottom:18px;}
+.contact-list{display:grid;gap:16px;}
+.contact-item{display:flex;gap:14px;align-items:flex-start;}
+.contact-item-icon{width:42px;height:42px;border-radius:14px;background:rgba(74,227,255,0.12);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1.1rem;flex-shrink:0;}
+.contact-item-text strong{display:block;font-size:0.9rem;color:var(--text);margin-bottom:6px;}
+.contact-item-text span{color:var(--muted);font-size:0.92rem;line-height:1.7;}
+.form-field{display:grid;gap:10px;margin-bottom:18px;}
+.form-field label{font-size:0.9rem;color:var(--muted);font-weight:600;}
+.form-field input,.form-field textarea, .form-field select{width:100%;padding:16px 18px;border-radius:18px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.04);color:var(--text);resize:none;}
+.form-field textarea{min-height:150px;}
+.submit-btn{background:linear-gradient(135deg,var(--accent),var(--purple));color:#051725;padding:16px 24px;border-radius:999px;font-size:1rem;font-weight:700;transition:var(--transition);border:none;}
+.submit-btn:hover{transform:translateY(-2px);}
+.footer{padding:48px 0;background:rgba(255,255,255,0.03);border-top:1px solid rgba(255,255,255,0.06);}
+.footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:24px;}
+.footer-column h4{font-size:1rem;color:var(--text);margin-bottom:18px;}
+.footer-column a{display:block;color:var(--muted);margin-bottom:12px;transition:color var(--transition);}
+.footer-column a:hover{color:var(--text);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid rgba(255,255,255,0.06);color:var(--muted);font-size:0.94rem;}
+.admin-section{padding:80px 0;background:linear-gradient(180deg,rgba(2,7,20,0.96),rgba(4,11,24,0.96));}
+.admin-frame{display:grid;grid-template-columns:280px 1fr;gap:26px;}
+.admin-sidebar{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:32px;padding:28px;display:flex;flex-direction:column;gap:24px;min-height:760px;}
+.sidebar-title{font-size:0.95rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.18em;font-weight:700;}
+.sidebar-nav{display:grid;gap:14px;}
+.sidebar-nav button{width:100%;text-align:left;padding:16px 18px;border-radius:18px;background:rgba(255,255,255,0.04);border:none;color:var(--text);font-weight:700;transition:var(--transition);}
+.sidebar-nav button.active, .sidebar-nav button:hover{background:rgba(74,227,255,0.14);}
+.sidebar-profile{background:linear-gradient(135deg,rgba(74,227,255,0.12),rgba(156,92,255,0.12));border-radius:24px;padding:22px;display:grid;gap:14px;}
+.profile-head{display:flex;align-items:center;gap:16px;}
+.profile-avatar{width:54px;height:54px;border-radius:18px;background:linear-gradient(135deg,var(--accent),var(--purple));display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:800;color:#051725;}
+.profile-info strong{display:block;font-size:1rem;color:var(--text);}
+.profile-info span{color:var(--muted);font-size:0.9rem;}
+.admin-top{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:24px;}
+.admin-title{font-family:var(--font-heading);font-size:2.15rem;line-height:1;}
+.admin-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.quick-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:26px;padding:24px;display:grid;gap:16px;}
+.quick-card strong{font-size:2rem;color:var(--text);display:block;}
+.quick-card span{color:var(--muted);font-size:0.94rem;}
+.dashboard-grid{display:grid;grid-template-columns:1fr 0.95fr;gap:26px;}
+.tab-panel{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:30px;padding:28px;min-height:720px;}
+.tab-panel h3{font-family:var(--font-heading);font-size:1.4rem;margin-bottom:20px;}
+.tab-grid{display:grid;gap:20px;}
+.panel-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:26px;padding:24px;}
+.panel-card h4{margin-bottom:14px;color:var(--text);}
+.panel-list{display:grid;gap:16px;}
+.panel-item{border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:18px;}
+.panel-item strong{display:block;margin-bottom:6px;color:var(--text);}
+.panel-item span{color:var(--muted);font-size:0.94rem;line-height:1.7;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.card-footer{display:flex;justify-content:space-between;align-items:center;padding-top:18px;color:var(--muted);font-size:0.92rem;}
+.toggle-pill{display:inline-flex;padding:10px 16px;border-radius:999px;background:rgba(74,227,255,0.12);color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:0.14em;font-size:0.78rem;}
+@media(max-width:1200px){.hero{grid-template-columns:1fr;min-height:auto;}.hero-visual{min-height:420px;}.grid-3{grid-template-columns:repeat(2,minmax(0,1fr));}.stat-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.admin-frame{grid-template-columns:1fr;}.dashboard-grid{grid-template-columns:1fr;}.contact-grid{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:860px){.nav-links{display:none;}.hero-copy h1{font-size:clamp(2.5rem,8vw,3.5rem);}.hero-metrics{grid-template-columns:1fr;}.grid-3{grid-template-columns:1fr;}.stat-grid{grid-template-columns:1fr;}.partners-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.gallery-grid{grid-template-columns:1fr;}.admin-sidebar{min-height:auto;}.admin-actions{flex-direction:column;}.contact-grid{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr;}}
+@media(max-width:640px){section{padding:64px 0;}.container{width:min(100% - 24px, var(--container));}.hero-visual{border-radius:28px;}.button, .button-secondary{width:100%;}.hero-actions{flex-direction:column;}.split-grid{display:grid;grid-template-columns:1fr;}.metric-card{min-height:130px;}.card-body{padding:24px;}.admin-sidebar{padding:22px;}.sidebar-nav button{font-size:0.9rem;}.admin-top{flex-direction:column;align-items:flex-start;}.form-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<header class="sticky-nav">
+  <div class="container navbar">
+    <a href="#hero" class="brand">
+      <div class="brand-mark">TG</div>
+      <div class="brand-text">
+        <div class="brand-title">Togdheere Global</div>
+        <div class="brand-sub">Logistics | Infrastructure | Enterprise</div>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#contact" class="cta-link">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section id="hero">
+    <div class="container hero">
+      <div class="hero-copy fade-up">
+        <div class="eyebrow">International Logistics Platform</div>
+        <h1>Premium cargo<br>command for global supply chains</h1>
+        <p>Experience Togdheere as a cinematic enterprise portal built for world-class logistics, corporate trust, infrastructure leadership and premium digital operations.</p>
+        <div class="hero-actions">
+          <button class="button" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Request Consultation</button>
+          <button class="button-secondary" onclick="document.getElementById('dashboard').scrollIntoView({behavior:'smooth'})">Open Admin Dashboard</button>
+        </div>
+        <div class="hero-metrics">
+          <div class="metric-card"><strong>18+</strong><span>Years in operations</span></div>
+          <div class="metric-card"><strong>120+</strong><span>Global logistics partners</span></div>
+          <div class="metric-card"><strong>340+</strong><span>Infrastructure projects</span></div>
+          <div class="metric-card"><strong>56</strong><span>Countries served</span></div>
+        </div>
+      </div>
+      <div class="hero-visual fade-up">
+        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1400&q=80" alt="Global logistics command center">
+        <div class="hero-overlay"></div>
+      </div>
+    </div>
+  </section>
+  <section id="about">
+    <div class="container fade-up">
+      <div class="section-label label-pill">About the Company</div>
+      <h2 class="section-title">A premium logistics empire for the Horn of Africa and beyond</h2>
+      <p class="section-sub">Togdheere delivers cinematic enterprise-grade logistics, procurement, infrastructure and digital command solutions for international agencies, governments, and corporate partners.</p>
+      <div class="split-grid">
+        <div class="card card-inner">
+          <div class="card-title">Enterprise-grade operations</div>
+          <p class="card-text">Our corporate portal is engineered to reflect global authority, premium branding, secure supply chain execution and real-time logistics visibility.</p>
+        </div>
+        <div class="card card-inner">
+          <div class="card-title">Logistics, construction, procurement</div>
+          <p class="card-text">With a sophisticated service portfolio, we combine freight forwarding, warehousing, heavy infrastructure delivery and UN-grade procurement capabilities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="services">
+    <div class="container fade-up">
+      <div class="section-label label-pill">Services</div>
+      <h2 class="section-title">Strategic logistics and enterprise services</h2>
+      <p class="section-sub">Modern, premium service delivery designed for corporate, humanitarian and government operations across the region.</p>
+      <div class="grid-3">
+        <article class="service-card fade-up">
+          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=900&q=80" alt="Freight logistics operations">
+          <div class="card-body">
+            <div class="card-label">Freight Forwarding</div>
+            <div class="card-heading">International cargo execution</div>
+            <div class="card-copy">End-to-end air, sea and road transport with compliance, tracking and trusted customs handling.</div>
+          </div>
+        </article>
+        <article class="service-card fade-up">
+          <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=900&q=80" alt="Construction and infrastructure">
+          <div class="card-body">
+            <div class="card-label">Infrastructure</div>
+            <div class="card-heading">Boreholes, roads and facilities</div>
+            <div class="card-copy">Large-scale construction, water systems, roads and institutional infrastructure built for lasting impact.</div>
+          </div>
+        </article>
+        <article class="service-card fade-up">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900&q=80" alt="ICT products procurement">
+          <div class="card-body">
+            <div class="card-label">Procurement</div>
+            <div class="card-heading">UN-grade product sourcing</div>
+            <div class="card-copy">Premium ICT, electronics and infrastructure products sourced for global organisations and digital hubs.</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section id="projects">
+    <div class="container fade-up">
+      <div class="section-label label-pill">Projects Showcase</div>
+      <h2 class="section-title">World-class project delivery with cinematic precision</h2>
+      <p class="section-sub">A showcase of corporate logistics, infrastructure and supply chain excellence with premium visuals and real outcomes.</p>
+      <div class="grid-3">
+        <article class="project-card fade-up">
+          <img src="https://images.unsplash.com/photo-1566552072077-a7b0b6f0f0d2?w=900&q=80" alt="Container port operations">
+          <div class="card-body">
+            <div class="card-label">Global Port</div>
+            <div class="card-heading">Operational port management</div>
+            <div class="card-copy">Managing high-volume container flow, customs clearing, and international freight shipments with precision.</div>
+          </div>
+        </article>
+        <article class="project-card fade-up">
+          <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=900&q=80" alt="Borehole drilling project">
+          <div class="card-body">
+            <div class="card-label">Water Systems</div>
+            <div class="card-heading">Borehole and pipeline delivery</div>
+            <div class="card-copy">Deep borehole construction, solar pumping and clean water networks for remote communities.</div>
+          </div>
+        </article>
+        <article class="project-card fade-up">
+          <img src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?w=900&q=80" alt="Healthcare infrastructure development">
+          <div class="card-body">
+            <div class="card-label">Healthcare</div>
+            <div class="card-heading">Facility rehabilitation</div>
+            <div class="card-copy">Refurbishing clinics, hospitals and WASH infrastructure for safe and sustainable service delivery.</div>
+          </div>
+        </article>
+      </div>
+      <div class="stat-grid fade-up">
+        <div class="stat-widget"><strong>97%</strong><span>On-time delivery rate</span></div>
+        <div class="stat-widget"><strong>28</strong><span>Regional logistics hubs</span></div>
+        <div class="stat-widget"><strong>1.8K</strong><span>Daily cargo movements</span></div>
+        <div class="stat-widget"><strong>4.9/5</strong><span>Partner satisfaction score</span></div>
+      </div>
+    </div>
+  </section>
+  <section id="partners">
+    <div class="container fade-up">
+      <div class="section-label label-pill">Global Partners</div>
+      <h2 class="section-title">International trust from leading agencies</h2>
+      <p class="section-sub">Partnered with advanced logistics agencies, humanitarian networks and corporate clients across Africa and the Arabian region.</p>
+      <div class="partners-grid">
+        <article class="partner-card fade-up"><span>UNICEF</span></article>
+        <article class="partner-card fade-up"><span>IOM</span></article>
+        <article class="partner-card fade-up"><span>WFP</span></article>
+        <article class="partner-card fade-up"><span>UNHCR</span></article>
+        <article class="partner-card fade-up"><span>Windle Int.</span></article>
+      </div>
+    </div>
+  </section>
+  <section id="gallery">
+    <div class="container fade-up">
+      <div class="section-label label-pill">Logistics Gallery</div>
+      <h2 class="section-title">Cinematic freight and infrastructure visuals</h2>
+      <p class="section-sub">A premium gallery showcasing the scale, quality and modern visuals behind Togdheere's enterprise operations.</p>
+      <div class="gallery-grid">
+        <article class="gallery-card fade-up"><img src="https://images.unsplash.com/photo-1483721310020-03333e577078?w=900&q=80" alt="Shipping fleet"><div class="gallery-label">Freight Command</div></article>
+        <article class="gallery-card fade-up"><img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=900&q=80" alt="Logistics team"><div class="gallery-label">Operations Team</div></article>
+        <article class="gallery-card fade-up"><img src="https://images.unsplash.com/photo-1556741533-f6acd647d2fb?w=900&q=80" alt="Supply chain dashboard"><div class="gallery-label">Control Center</div></article>
+      </div>
+    </div>
+  </section>
+  <section id="updates">
+    <div class="container fade-up">
+      <div class="section-label label-pill">Daily Work</div>
+      <h2 class="section-title">Live cargo, news and logistics updates</h2>
+      <p class="section-sub">Track the latest Togdheere operational pulse: cargo movements, logistics status, supply chain alerts and corporate announcements.</p>
+      <div class="grid-3">
+        <article class="service-card fade-up"><div class="card-body"><div class="card-label">Cargo News</div><div class="card-heading">Latest port updates</div><div class="card-copy">12 containers released at Mogadishu, 6 emergency shipments scheduled, and new customs clearance lanes activated.</div></div></article>
+        <article class="service-card fade-up"><div class="card-body"><div class="card-label">Logistics</div><div class="card-heading">Route optimization</div><div class="card-copy">Advanced routing across Ethiopia and Kenya with integrated fleet tracking and priority delivery for critical supplies.</div></div></article>
+        <article class="service-card fade-up"><div class="card-body"><div class="card-label">Corporate News</div><div class="card-heading">Partnership announcement</div><div class="card-copy">New collaboration launched with a leading UN agency to expand humanitarian logistics capacity.</div></div></article>
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+    <div class="container fade-up">
+      <div class="section-label label-pill">Contact & Leads</div>
+      <h2 class="section-title">Request a premium partnership</h2>
+      <p class="section-sub">Submit your inquiry and our enterprise team will respond with tailored logistics, procurement, and infrastructure solutions.</p>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Connect with our corporate team</h3>
+          <div class="contact-list">
+            <div class="contact-item"><div class="contact-item-icon">📍</div><div class="contact-item-text"><strong>Headquarters</strong><span>Mogadishu, Somalia</span></div></div>
+            <div class="contact-item"><div class="contact-item-icon">📧</div><div class="contact-item-text"><strong>Email</strong><span>togdheereglobal@gmail.com</span></div></div>
+            <div class="contact-item"><div class="contact-item-icon">📞</div><div class="contact-item-text"><strong>Phone</strong><span>+252 615 213 230</span></div></div>
+            <div class="contact-item"><div class="contact-item-icon">🌍</div><div class="contact-item-text"><strong>Operations</strong><span>Somalia, Ethiopia, Kenya, Djibouti</span></div></div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="form-field"><label for="leadName">Full name</label><input id="leadName" type="text" placeholder="Your name"></div>
+          <div class="form-field"><label for="leadCompany">Company / Organization</label><input id="leadCompany" type="text" placeholder="Organization"></div>
+          <div class="form-field"><label for="leadEmail">Email address</label><input id="leadEmail" type="email" placeholder="email@company.com"></div>
+          <div class="form-field"><label for="leadService">Service interest</label><select id="leadService"><option value="">Choose service</option><option>Freight forwarding</option><option>Infrastructure projects</option><option>Procurement</option><option>Logistics operations</option></select></div>
+          <div class="form-field"><label for="leadMessage">Message</label><textarea id="leadMessage" placeholder="Tell us about your requirement..."></textarea></div>
+          <button class="submit-btn" onclick="submitInquiry()">Submit request</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="dashboard" class="admin-section">
+    <div class="container fade-up">
+      <div class="admin-top">
+        <div>
+          <div class="label-pill">Admin Dashboard</div>
+          <div class="admin-title">Premium enterprise content control</div>
+        </div>
+        <div class="admin-actions">
+          <button class="button-secondary" onclick="switchAdminTab('overview')">Overview</button>
+          <button class="button-secondary" onclick="switchAdminTab('publish')">Publish</button>
+        </div>
+      </div>
+      <div class="admin-frame">
+        <aside class="admin-sidebar fade-up">
+          <div class="sidebar-title">Management tools</div>
+          <div class="sidebar-nav">
+            <button class="active" data-tab="overview" onclick="switchAdminTab('overview')">Dashboard Overview</button>
+            <button data-tab="news" onclick="switchAdminTab('news')">News & Updates</button>
+            <button data-tab="projects" onclick="switchAdminTab('projects')">Project Upload</button>
+            <button data-tab="gallery" onclick="switchAdminTab('gallery')">Gallery Manager</button>
+            <button data-tab="partners" onclick="switchAdminTab('partners')">Partner Updates</button>
+            <button data-tab="company" onclick="switchAdminTab('company')">Company Info</button>
+          </div>
+          <div class="sidebar-profile">
+            <div class="profile-head"><div class="profile-avatar">TG</div><div class="profile-info"><strong>Admin User</strong><span>Enterprise content manager</span></div></div>
+            <div class="panel-item"><strong>Daily posts</strong><span id="dashboardNewsCount">4 active news entries</span></div>
+            <div class="panel-item"><strong>Projects live</strong><span id="dashboardProjectCount">6 current projects</span></div>
+            <div class="panel-item"><strong>Gallery items</strong><span id="dashboardGalleryCount">9 images</span></div>
+          </div>
+        </aside>
+        <div class="dashboard-grid fade-up">
+          <section id="overview" class="tab-panel">
+            <h3>Dashboard Overview</h3>
+            <div class="tab-grid">
+              <div class="panel-card"><h4>Analytics</h4><div class="stat-grid"><div class="stat-widget"><strong id="dailyTraffic">14.2K</strong><span>Daily visitors</span></div><div class="stat-widget"><strong id="monthlyLeads">324</strong><span>Leads submitted</span></div><div class="stat-widget"><strong id="activeOps">18</strong><span>Active logistics lanes</span></div><div class="stat-widget"><strong id="publishedStories">12</strong><span>Live stories</span></div></div></div>
+              <div class="panel-card"><h4>Live Operations</h4><div class="panel-list" id="liveOpsList"></div></div>
+            </div>
+          </section>
+          <section id="news" class="tab-panel" style="display:none;">
+            <h3>News & Content Publishing</h3>
+            <div class="panel-card">
+              <div class="form-grid">
+                <div class="form-field"><label for="newsTitle">Headline</label><input id="newsTitle" type="text" placeholder="Enter news title"></div>
+                <div class="form-field"><label for="newsCategory">Category</label><select id="newsCategory"><option value="Cargo">Cargo</option><option value="Logistics">Logistics</option><option value="Corporate">Corporate</option></select></div>
+              </div>
+              <div class="form-field"><label for="newsExcerpt">Excerpt</label><textarea id="newsExcerpt" placeholder="Short summary..."></textarea></div>
+              <button class="submit-btn" onclick="publishNews()">Publish News</button>
+            </div>
+            <div class="panel-card" style="margin-top:20px;"><h4>Published News</h4><div class="panel-list" id="publishedNews"></div></div>
+          </section>
+          <section id="projects" class="tab-panel" style="display:none;">
+            <h3>Project Upload System</h3>
+            <div class="panel-card">
+              <div class="form-grid">
+                <div class="form-field"><label for="projectName">Project name</label><input id="projectName" type="text" placeholder="Project title"></div>
+                <div class="form-field"><label for="projectLocation">Location</label><input id="projectLocation" type="text" placeholder="Region / city"></div>
+              </div>
+              <div class="form-field"><label for="projectDescription">Description</label><textarea id="projectDescription" placeholder="Project details..."></textarea></div>
+              <div class="form-field"><label for="projectImage">Image URL</label><input id="projectImage" type="text" placeholder="Paste image URL"></div>
+              <button class="submit-btn" onclick="publishProject()">Upload Project</button>
+            </div>
+            <div class="panel-card" style="margin-top:20px;"><h4>Live Projects</h4><div class="panel-list" id="publishedProjects"></div></div>
+          </section>
+          <section id="gallery" class="tab-panel" style="display:none;">
+            <h3>Gallery & Image Manager</h3>
+            <div class="panel-card">
+              <div class="form-grid">
+                <div class="form-field"><label for="galleryTitle">Label</label><input id="galleryTitle" type="text" placeholder="Visual label"></div>
+                <div class="form-field"><label for="galleryImageUrl">Image URL</label><input id="galleryImageUrl" type="text" placeholder="Unsplash / Pexels URL"></div>
+              </div>
+              <button class="submit-btn" onclick="publishGallery()">Add Gallery Item</button>
+            </div>
+            <div class="panel-card" style="margin-top:20px;"><h4>Gallery Items</h4><div class="panel-list" id="publishedGallery"></div></div>
+          </section>
+          <section id="partners" class="tab-panel" style="display:none;">
+            <h3>Partnership Updates</h3>
+            <div class="panel-card">
+              <div class="form-grid">
+                <div class="form-field"><label for="partnerName">Partner name</label><input id="partnerName" type="text" placeholder="Partner organization"></div>
+                <div class="form-field"><label for="partnerStatus">Status</label><select id="partnerStatus"><option>Active</option><option>Pending</option><option>Updated</option></select></div>
+              </div>
+              <div class="form-field"><label for="partnerNote">Update note</label><textarea id="partnerNote" placeholder="Brief note..."></textarea></div>
+              <button class="submit-btn" onclick="publishPartner()">Save Partner Update</button>
+            </div>
+            <div class="panel-card" style="margin-top:20px;"><h4>Current Partners</h4><div class="panel-list" id="publishedPartners"></div></div>
+          </section>
+          <section id="company" class="tab-panel" style="display:none;">
+            <h3>Company Information</h3>
+            <div class="panel-card">
+              <div class="form-grid">
+                <div class="form-field"><label for="companyHeadline">Headline</label><input id="companyHeadline" type="text" placeholder="Enterprise headline"></div>
+                <div class="form-field"><label for="companySummary">Summary</label><textarea id="companySummary" placeholder="Company overview..."></textarea></div>
+              </div>
+              <button class="submit-btn" onclick="updateCompanyInfo()">Update Company Info</button>
+            </div>
+            <div class="panel-card" style="margin-top:20px;"><h4>Current Overview</h4><div class="panel-list"><div class="panel-item"><strong>Headline</strong><span id="currentHeadline">Premium logistics command for global supply chains</span></div><div class="panel-item"><strong>Summary</strong><span id="currentSummary">Togdheere delivers cinematic enterprise-grade logistics, procurement, infrastructure and digital command solutions for international agencies, governments, and corporate partners.</span></div></div></div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container footer-grid fade-up">
+      <div class="footer-column"><h4>Togdheere Global</h4><a href="#hero">Home</a><a href="#services">Services</a><a href="#dashboard">Admin Dashboard</a><a href="#contact">Contact</a></div>
+      <div class="footer-column"><h4>Services</h4><a href="#services">Freight Forwarding</a><a href="#services">Supply Chain</a><a href="#services">Infrastructure</a></div>
+      <div class="footer-column"><h4>Resources</h4><a href="#gallery">Gallery</a><a href="#projects">Projects</a><a href="#updates">Updates</a></div>
+      <div class="footer-column"><h4>Contact</h4><a href="mailto:togdheereglobal@gmail.com">togdheereglobal@gmail.com</a><a href="tel:+252615213230">+252 615 213 230</a><span>Somalia, Ethiopia, Kenya, Djibouti</span></div>
+    </div>
+    <div class="container footer-bottom fade-up"><span>© 2026 Togdheere General Trading & Logistics Co.</span><span>Designed for premium enterprise logistics.</span></div>
+  </footer>
+</main>
+<script>
+const observer = new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}});},{threshold:0.2});
+document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+const counters = document.querySelectorAll('.metric-card strong');
+counters.forEach((counter)=>{const target = +counter.textContent.replace('+','');counter.textContent='0';const step = Math.ceil(target/120);const update=()=>{const current=+counter.textContent; if(current<target){counter.textContent=current+step;setTimeout(update,12);} else {counter.textContent=target+ (counter.textContent.includes('+') ? '+' : '');}};update();});
+function submitInquiry(){const name=document.getElementById('leadName').value.trim();const email=document.getElementById('leadEmail').value.trim();const service=document.getElementById('leadService').value;const message=document.getElementById('leadMessage').value.trim();if(!name||!email||!service||!message){alert('Please complete all fields before submitting.');return;}alert('Inquiry submitted successfully. Our enterprise team will contact you soon.');document.getElementById('leadName').value='';document.getElementById('leadCompany').value='';document.getElementById('leadEmail').value='';document.getElementById('leadService').value='';document.getElementById('leadMessage').value='';}
+const liveOpsItems = [
+  {title:'Priority cargo moved to Mogadishu port', detail:'12 containers released, customs cleared, inbound distribution active.'},
+  {title:'Emergency medical shipment on route', detail:'24-hour logistics lane open for critical healthcare supplies.'},
+  {title:'Infrastructure team mobilized', detail:'Borehole and clinic refurbishment crews deployed to Puntland.'}
+];
+const newsItems = [
+  {title:'New logistics alliance announced', category:'Corporate', excerpt:'Partnership with a global humanitarian agency expands supply chain capacity.'},
+  {title:'Port clearance efficiency improved', category:'Cargo', excerpt:'New customs workflow reduced processing time by 32%.'}
+];
+const projectItems = [
+  {name:'Djibouti Terminal Modernization', location:'Djibouti', description:'Advanced cargo staging and terminal infrastructure for faster throughput.'},
+  {name:'Garowe Water Network', location:'Puntland', description:'Solar-powered water supply for rural communities.'}
+];
+const galleryItems = [
+  {label:'Night cargo terminal', url:'https://images.unsplash.com/photo-1508514177221-188b1cf16e3c?w=900&q=80'},
+  {label:'Control room analytics', url:'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900&q=80'}
+];
+const partnerItems = [
+  {name:'UNICEF', status:'Active', note:'Ongoing relief logistics support.'},
+  {name:'IOM', status:'Updated', note:'Expanded transport corridors established.'}
+];
+function renderDashboard(){document.getElementById('liveOpsList').innerHTML=liveOpsItems.map(item=>`<div class="panel-item"><strong>${item.title}</strong><span>${item.detail}</span></div>`).join('');document.getElementById('publishedNews').innerHTML=newsItems.map(item=>`<div class="panel-item"><strong>[${item.category}] ${item.title}</strong><span>${item.excerpt}</span></div>`).join('');document.getElementById('publishedProjects').innerHTML=projectItems.map(item=>`<div class="panel-item"><strong>${item.name} — ${item.location}</strong><span>${item.description}</span></div>`).join('');document.getElementById('publishedGallery').innerHTML=galleryItems.map(item=>`<div class="panel-item"><strong>${item.label}</strong><span>${item.url}</span></div>`).join('');document.getElementById('publishedPartners').innerHTML=partnerItems.map(item=>`<div class="panel-item"><strong>${item.name} — ${item.status}</strong><span>${item.note}</span></div>`).join('');document.getElementById('dashboardNewsCount').textContent=`${newsItems.length} active news entries`;document.getElementById('dashboardProjectCount').textContent=`${projectItems.length} current projects`;document.getElementById('dashboardGalleryCount').textContent=`${galleryItems.length} images`;}
+function switchAdminTab(tab){document.querySelectorAll('.sidebar-nav button').forEach(btn=>btn.classList.toggle('active',btn.dataset.tab===tab));document.querySelectorAll('.tab-panel').forEach(panel=>panel.style.display=panel.id===tab?'block':'none');}
+function publishNews(){const title=document.getElementById('newsTitle').value.trim();const category=document.getElementById('newsCategory').value;const excerpt=document.getElementById('newsExcerpt').value.trim();if(!title||!excerpt){alert('Please add a title and excerpt.');return;}newsItems.unshift({title,category,excerpt});renderDashboard();document.getElementById('newsTitle').value='';document.getElementById('newsExcerpt').value='';alert('News entry published.');}
+function publishProject(){const name=document.getElementById('projectName').value.trim();const location=document.getElementById('projectLocation').value.trim();const description=document.getElementById('projectDescription').value.trim();const url=document.getElementById('projectImage').value.trim();if(!name||!location||!description){alert('Please fill out project details.');return;}projectItems.unshift({name,location,description,image:url});renderDashboard();document.getElementById('projectName').value='';document.getElementById('projectLocation').value='';document.getElementById('projectDescription').value='';document.getElementById('projectImage').value='';alert('Project uploaded.');}
+function publishGallery(){const label=document.getElementById('galleryTitle').value.trim();const url=document.getElementById('galleryImageUrl').value.trim();if(!label||!url){alert('Please provide an image label and URL.');return;}galleryItems.unshift({label,url});renderDashboard();document.getElementById('galleryTitle').value='';document.getElementById('galleryImageUrl').value='';alert('Gallery item added.');}
+function publishPartner(){const name=document.getElementById('partnerName').value.trim();const status=document.getElementById('partnerStatus').value;const note=document.getElementById('partnerNote').value.trim();if(!name||!note){alert('Please complete partner fields.');return;}partnerItems.unshift({name,status,note});renderDashboard();document.getElementById('partnerName').value='';document.getElementById('partnerNote').value='';alert('Partner update saved.');}
+function updateCompanyInfo(){const headline=document.getElementById('companyHeadline').value.trim();const summary=document.getElementById('companySummary').value.trim();if(!headline||!summary){alert('Please provide headline and summary.');return;}document.getElementById('currentHeadline').textContent=headline;document.getElementById('currentSummary').textContent=summary;alert('Company information updated.');}
+renderDashboard();
+</script>
+</body>
+</html>
